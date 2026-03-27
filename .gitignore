@@ -2,4 +2,3 @@
 node_modules
 css/*.css
 css/*.css.map
-_docker/mariadb/db
