@@ -1,8 +1,25 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
+//Bootstrap breakpoints, men custom breakpoint
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        mg: 850px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 1950px,
+);
+
 // 2. Include any default variable overrides here
 $link-decoration: none;
+$black: #121212;
+$white: #F9FEFF;
+
+$primary: #01085E;
+$secondary: #0078B7;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -18,3 +35,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrapComponents";
 
 // 5. Du kan lave styling her...
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+}
