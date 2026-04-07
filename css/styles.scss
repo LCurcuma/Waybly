@@ -39,4 +39,197 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
   font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
+
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: $primary;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-item {
+  color: white;
+  font-size: 31px;
+  text-decoration: none;
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 34px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 37px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 40px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 43px;
+  }
+}
+
+.center-item {
+  position: relative;
+  width: 80px;
+  height: 70px;
+  top: -30px;
+  padding-top: 15px;
+  background-color: $primary;
+  border-radius: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  @include media-breakpoint-up(md) {
+    width: 83px;
+    height: 73px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    width: 86px;
+    height: 76px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 91px;
+    height: 81px;
+  }
+}
+
+.center-btn {
+  width: 55px;
+  height: 55px;
+  font-size: 31px;
+  color: white;
+  background-color: $secondary;
+  border-radius: 43%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 34px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 37px;
+    width: 58px;
+    height: 58px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 40px;
+    width: 61px;
+    height: 61px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 43px;
+    width: 66px;
+    height: 66px;
+  }
+}
+
+.modal-dialog{
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+  max-width: none;
+
+  @include media-breakpoint-up(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 500px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    max-width: 550px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
+  }
+}
+
+.custom-modal{
+  border-radius: 20px;
+  border: none;
+  background: $white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  width: 100%;
+  z-index: 9999;
+
+  .modal-header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 15px 0 0;
+  }
+
+  .btn-close{
+    background-color: transparent;
+    filter:invert(7%) sepia(87%) saturate(2855%) hue-rotate(213deg) brightness(91%) contrast(106%);
+    border-radius: 50%;
+    opacity: 1;
+    margin: 15px 15px 0 0;
+
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
+
+.kontaktmodaltekst{
+  font-size: 16px;
+
+  @include media-breakpoint-up(sm) {
+   font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 22px;
+  }
+}
+
+.kontaktmodalicon{
+  font-size: 20px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 36px;
+  }
 }
