@@ -17,14 +17,26 @@ require "settings/init.php";
     <meta name="copyright" content="Information om copyright">
     
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
 
 <body>
 
+
+
 <h1>Det virker 🥳</h1>
 
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<?php include 'navigation.php'; ?>
 </body>
 </html>
