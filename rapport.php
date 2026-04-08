@@ -162,7 +162,7 @@ require "settings/init.php";
     modal.addEventListener('shown.bs.modal', function () {
         setTimeout(() => {
             bootstrap.Modal.getInstance(modal).hide();
-        }, 2000);
+        }, 3000);
     });
 
     document.querySelectorAll('.upload-btn').forEach(btn => {
