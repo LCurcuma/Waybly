@@ -36,12 +36,15 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+//--------------- BODY ---------------//
 body {
   font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
-
 }
+//--------------- BODY ---------------//
 
+
+//--------------- NAVBAR ---------------//
 .navbar {
   position: fixed;
   bottom: 0;
@@ -233,3 +236,4 @@ body {
     font-size: 36px;
   }
 }
+//--------------- NAVBAR ---------------//
