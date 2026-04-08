@@ -1,6 +1,7 @@
 [
   {
     "name": "Netto Fejøgade",
+    "latlong": [54.762883,11.868463],
     "rating": "4.5",
     "description": "God tilgængelig butik med brede gange og nem adgang.",
     "markings": [
@@ -24,6 +25,7 @@
   },
   {
     "name": "Rema 1000",
+    "latlong": [54.767276,11.881904],
     "rating": "3.0",
     "description": "Moderne butik med gode parkeringsforhold.",
     "markings": [
@@ -34,6 +36,7 @@
   },
   {
     "name": "Føtex Nørreport",
+    "latlong": [54.758865,11.854632],
     "rating": "5.0",
     "description": "Stor butik med elevator og gode adgangsforhold.",
     "markings": [
@@ -46,6 +49,7 @@
   },
   {
     "name": "Bilka Fields",
+    "latlong": [55.631002,12.579481],
     "rating": "1.2",
     "description": "Stor butik med masser af plads og gode faciliteter.",
     "markings": [
@@ -57,6 +61,7 @@
   },
   {
     "name": "Lidl City",
+    "latlong": [54.768887,11.864483],
     "rating": "2.5",
     "description": "Centralt beliggende butik, men med lidt udfordrende adgangsforhold.",
     "markings": [
