@@ -2,19 +2,47 @@
   {
     "name": "Netto Fejøgade",
     "rating": "4.5",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "God tilgængelig butik med brede gange og nem adgang.",
     "markings": ["Rampe", "Dør", "Toilet", "Parkering"],
     "photo_links": ["https://placehold.net/default.png"],
     "comments": [
       {
-        "username": "Hans Hansen",
-        "rating": "5.0",
-        "date": "2023-10-01",
-        "theme": "God tilgængelighed",
-        "comment": "Rigtig fine forhold.",
+        "username": "Mette Sørensen",
+        "rating": "4.0",
+        "date": "2023-11-12",
+        "theme": "Let adgang",
+        "comment": "Nem at komme ind, men lidt smalle gange nogle steder.",
         "comment_photo_links": [""],
-        "markings": ["Rampe"]
+        "markings": ["Dør"]
       }
     ]
+  },
+  {
+    "name": "Rema 1000",
+    "rating": "3.0",
+    "description": "Moderne butik med gode parkeringsforhold.",
+    "markings": ["Parkering", "Rampe"],
+    "photo_links": ["https://placehold.net/default.png"]
+  },
+  {
+    "name": "Føtex Nørreport",
+    "rating": "5.0",
+    "description": "Stor butik med elevator og gode adgangsforhold.",
+    "markings": ["Toilet", "Dør", "Rampe", "Parkering"],
+    "photo_links": ["https://placehold.net/default.png"]
+  },
+  {
+    "name": "Bilka Fields",
+    "rating": "1.2",
+    "description": "Stor butik med masser af plads og gode faciliteter.",
+    "markings": ["Parkering", "Toilet", "Rampe"],
+    "photo_links": ["https://placehold.net/default.png"]
+  },
+  {
+    "name": "Lidl City",
+    "rating": "2.5",
+    "description": "Centralt beliggende butik, men med lidt udfordrende adgangsforhold.",
+    "markings": ["Dør", "Toilet"],
+    "photo_links": ["https://placehold.net/default.png"]
   }
 ]
