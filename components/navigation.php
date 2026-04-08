@@ -1,6 +1,6 @@
 
 <div class="navbar">
-    <a href="index.php" class="nav-item">
+    <a href="../index.php" class="nav-item">
         <i class="icon bi bi-house-door-fill"></i>
     </a>
 
