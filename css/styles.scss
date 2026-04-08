@@ -265,3 +265,33 @@ body {
   overflow: hidden;
 }
 //--------------- H.HEADER ---------------//
+
+
+//--------------- H.CARDS ---------------//
+.h-place-card {
+  width: 260px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
+
+  .h-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+
+  .h-description-text {
+    font-size: 0.8rem;
+    color: #868989;
+    overflow: hidden;
+    line-height: 1.4;
+
+    //viser kun 2 linjer og slutter med "..."
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+//--------------- H.CARDS ---------------//
