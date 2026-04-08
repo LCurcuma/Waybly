@@ -3,7 +3,12 @@
     "name": "Netto Fejøgade",
     "rating": "4.5",
     "description": "God tilgængelig butik med brede gange og nem adgang.",
-    "markings": ["Rampe", "Dør", "Toilet", "Parkering"],
+    "markings": [
+      { "navn": "Rampe", "status": "success" },
+      { "navn": "Dør", "status": "success" },
+      { "navn": "Toilet", "status": "danger" },
+      { "navn": "Parkering", "status": "warning" }
+    ],
     "photo_links": ["https://placehold.net/default.png"],
     "comments": [
       {
@@ -21,28 +26,43 @@
     "name": "Rema 1000",
     "rating": "3.0",
     "description": "Moderne butik med gode parkeringsforhold.",
-    "markings": ["Parkering", "Rampe"],
+    "markings": [
+      { "navn": "Parkering", "status": "success" },
+      { "navn": "Rampe", "status": "danger" }
+    ],
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
     "name": "Føtex Nørreport",
     "rating": "5.0",
     "description": "Stor butik med elevator og gode adgangsforhold.",
-    "markings": ["Toilet", "Dør", "Rampe", "Parkering"],
+    "markings": [
+      { "navn": "Toilet", "status": "success" },
+      { "navn": "Dør", "status": "success" },
+      { "navn": "Rampe", "status": "success" },
+      { "navn": "Parkering", "status": "success" }
+    ],
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
     "name": "Bilka Fields",
     "rating": "1.2",
     "description": "Stor butik med masser af plads og gode faciliteter.",
-    "markings": ["Parkering", "Toilet", "Rampe"],
+    "markings": [
+      { "navn": "Parkering", "status": "warning" },
+      { "navn": "Toilet", "status": "danger" },
+      { "navn": "Rampe", "status": "danger" }
+    ],
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
     "name": "Lidl City",
     "rating": "2.5",
     "description": "Centralt beliggende butik, men med lidt udfordrende adgangsforhold.",
-    "markings": ["Dør", "Toilet"],
+    "markings": [
+      { "navn": "Dør", "status": "warning" },
+      { "navn": "Toilet", "status": "warning" }
+    ],
     "photo_links": ["https://placehold.net/default.png"]
   }
 ]
