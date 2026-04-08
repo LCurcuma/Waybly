@@ -58,13 +58,36 @@ require "settings/init.php";
 <!--------------- HEADER --------------->
 
 
+<!----------- FILTER SECTION ----------->
+<div class="px-3 pt-4">
+    <div class="mb-4">
+        <div class="h4 fw-bold mb-3">Populære søgninger</div>
+        <div class="d-flex gap-2 overflow-x-auto h-hide-scrollbar pb-2">
+
+            <!-- Rampe filter knap -->
+            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                <div class="bi bi-person-wheelchair fs-5"></div>Rampe</div>
+
+            <!-- Toilet filter knap -->
+            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                <div class="bi bi-badge-wc-fill fs-5"></div>Toilet</div>
+
+            <!-- Parkering filter knap -->
+            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                <div class="bi bi-p-square-fill fs-5"></div>Parkering</div>
+
+            <!-- Dør filter knap -->
+            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                <div class="bi bi-door-open-fill fs-5"></div>Dør</div>
+        </div>
+    </div>
+</div>
+<!----------- FILTER SECTION ----------->
+
+
 <!--------------- NAVBAR --------------->
 <?php include 'components/navigation.php'; ?>
 <!--------------- NAVBAR --------------->
-
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
