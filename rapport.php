@@ -28,7 +28,6 @@ require "settings/init.php";
 
 
 
-<h1>Det virker 🥳</h1>
 
 <?php include 'components/navigation.php'; ?>
 
