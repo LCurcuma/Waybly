@@ -265,3 +265,49 @@ body {
   overflow: hidden;
 }
 //--------------- H.HEADER ---------------//
+
+// --- Cards ---
+.h-place-card {
+  min-width: 280px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: white;
+
+  .h-card-img {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .h-description-text {
+    font-size: 0.8rem;
+    color: #777;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// --- Markings / Badges ---
+.h-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  .h-badge-custom {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+  }
+
+  .h-badge-rampe, .h-badge-dør { background-color: #1aa034; }
+  .h-badge-toilet { background-color: #e51a24; }
+  .h-badge-parkering { background-color: #ffde00; color: $black; }
+}
+
