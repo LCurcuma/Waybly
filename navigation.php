@@ -15,7 +15,6 @@
     </a>
 </div>
 
-
 <div class="modal fade" id="kontaktModal" tabindex="-1" aria-labelledby="kontaktModalLabel">
     <div class="modal-dialog modal-dialog-centered"> <div class="modal-content custom-modal">
 
