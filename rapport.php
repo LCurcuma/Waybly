@@ -107,7 +107,7 @@ require "settings/init.php";
     <!-- Bemærkninger -->
     <div class="section">
         <h3 class="fw-bold"><img src="img/checklist/bemærkninger/note.png" style="width: 20px" alt="note"> Bemærkninger<span>(valgfri)</span></h3>
-        <textarea class="custom-textarea"></textarea>
+        <textarea id="noteInput" class="custom-textarea"></textarea>
     </div>
 
     <!-- Upload -->
@@ -126,7 +126,7 @@ require "settings/init.php";
     </div>
 
     <!-- Submit -->
-    <button class="submit-btn" data-bs-toggle="modal" data-bs-target="#successModal">Indsend rapport</button>
+    <button id="submitBtn" class="submit-btn" data-bs-toggle="modal" data-bs-target="#successModal">Indsend rapport</button>
 
         <div class="modal fade" id="successModal" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -170,6 +170,18 @@ require "settings/init.php";
         btn.addEventListener('click', () => {
             alert('funktion kommer snart');
         });
+    });
+
+    document.getElementById('submitBtn').addEventListener('click', function () {
+
+        // Ryd textarea
+        document.getElementById('noteInput').value = '';
+
+        // Fjern valgte emojis (active class)
+        document.querySelectorAll('.icons i').forEach(icon => {
+            icon.classList.remove('active');
+        });
+
     });
 
 </script>
