@@ -112,7 +112,7 @@ require "settings/init.php";
 
     <!-- Upload -->
     <div class="section">
-        <h3 class="fw-bold custom-h3"><strong>Upload billede</strong> <span>(valgfri)</span></h3>
+        <h3 class="fw-bold custom-h3"><img src="img/checklist/uploade.png" style="width: 20px" alt="upload"> <strong>Upload billede</strong> <span>(valgfri)</span></h3>
         <div class="upload-buttons">
             <button class="upload-btn">
                 <i class="bi bi-camera"></i>
