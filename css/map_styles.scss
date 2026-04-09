@@ -91,3 +91,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .marker-danger{
   color: $danger;
 }
+
+//burger menu
+.burgerMenu{
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.hidden{
+  display: none;
+}
