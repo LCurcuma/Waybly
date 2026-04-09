@@ -78,3 +78,16 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   color: $white !important;
   border-radius: 10px;
 }
+
+//markers
+.marker-warning{
+  color: $warning;
+}
+
+.marker-success{
+  color: $success;
+}
+
+.marker-danger{
+  color: $danger;
+}

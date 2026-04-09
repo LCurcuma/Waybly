@@ -10,6 +10,7 @@
       { "navn": "Toilet", "status": "danger" },
       { "navn": "Parkering", "status": "warning" }
     ],
+    "markerColor": "marker-warning",
     "photo_links": ["https://placehold.net/default.png"],
     "comments": [
       {
@@ -32,6 +33,7 @@
       { "navn": "Parkering", "status": "success" },
       { "navn": "Rampe", "status": "danger" }
     ],
+    "markerColor": "marker-warning",
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
@@ -45,6 +47,7 @@
       { "navn": "Rampe", "status": "success" },
       { "navn": "Parkering", "status": "success" }
     ],
+    "markerColor": "marker-success",
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
@@ -57,6 +60,7 @@
       { "navn": "Toilet", "status": "danger" },
       { "navn": "Rampe", "status": "danger" }
     ],
+    "markerColor": "marker-warning",
     "photo_links": ["https://placehold.net/default.png"]
   },
   {
@@ -68,6 +72,7 @@
       { "navn": "Dør", "status": "warning" },
       { "navn": "Toilet", "status": "warning" }
     ],
+    "markerColor": "marker-warning",
     "photo_links": ["https://placehold.net/default.png"]
   }
 ]

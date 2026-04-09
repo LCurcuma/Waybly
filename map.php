@@ -23,6 +23,12 @@ require "settings/init.php";
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Favicon: https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
@@ -122,6 +128,8 @@ require "settings/init.php";
                     }
                 }
 
+
+
                 // Markeringer
                 let tags = '';
 
@@ -142,8 +150,21 @@ require "settings/init.php";
         `;
                 });
 
+                //Custom marker
+
+                const customIcon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `
+        <svg xmlns=http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class=${place.markerColor} viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+        </svg>
+    `,
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 30] // bottom center
+                });
+
                 // Laver marker
-                const marker = L.marker(place.latlong).addTo(map);
+                const marker = L.marker(place.latlong, { icon: customIcon }).addTo(map);
 
                 //Laver popup
                 marker.bindPopup(`
