@@ -106,13 +106,13 @@ require "settings/init.php";
 
     <!-- Bemærkninger -->
     <div class="section">
-        <h3 class="fw-bold"><img src="img/checklist/bemærkninger/note.png" style="width: 20px" alt="note"> Bemærkninger<span>(valgfri)</span></h3>
+        <h3><img src="img/checklist/bemærkninger/note.png" style="width: 20px" alt="note"><strong> Bemærkninger</strong><span> (valgfri)</span></h3>
         <textarea id="noteInput" class="custom-textarea"></textarea>
     </div>
 
     <!-- Upload -->
     <div class="section">
-        <h3 class="fw-bold custom-h3">Upload billede <span>(valgfri)</span></h3>
+        <h3 class="fw-bold custom-h3"><strong>Upload billede</strong> <span>(valgfri)</span></h3>
         <div class="upload-buttons">
             <button class="upload-btn">
                 <i class="bi bi-camera"></i>
