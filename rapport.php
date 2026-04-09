@@ -37,6 +37,7 @@ require "settings/init.php";
     </div>
 
     <div class="app-wrapper">
+        <div class="left-column">
 
     <!-- Card -->
     <div class="location-card">
@@ -113,7 +114,7 @@ require "settings/init.php";
     <div class="section">
         <h3 class="fw-bold custom-h3">Upload billede <span>(valgfri)</span></h3>
         <div class="upload-buttons">
-            <button class="upload-btn" onclick="alert('funktion kommer snart')">
+            <button class="upload-btn">
                 <i class="bi bi-camera"></i>
                 Tag photo
             </button>
