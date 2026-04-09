@@ -328,12 +328,12 @@ body {
   align-items: center;
 }
 
-h1{
+.custom-heading{
   font-size: 20px;
   margin: 0;
 }
 
-i {
+.custom-icon {
   font-size: 20px;
 }
 
@@ -345,7 +345,7 @@ i {
   margin-top: -40px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 
-  h2 {
+  .custom-h2 {
     font-size: 16px;
     margin: 0;
   }
@@ -373,7 +373,7 @@ i {
 .section {
   margin-top: 20px;
 
-  h3 {
+  .custom-h3 {
     font-size: 14px;
     margin-bottom: 10px;
 
@@ -396,9 +396,14 @@ i {
   align-items: center;
 
   .icons i {
-    font-size: 26px;
+    font-size: 30px;
     margin-left: 14px;
-    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: white;
   }
 
   .icons i.active {
@@ -408,9 +413,9 @@ i {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   }
 
-  .happy {color: #16a31d;}
-  .neutral {color: #f7e40f;}
-  .sad {color: #e31b1b;}
+  .happy {background: #16a31d;}
+  .neutral {background: #f7e40f;}
+  .sad {background: #e31b1b;}
 
 }
 

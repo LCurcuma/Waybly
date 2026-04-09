@@ -31,9 +31,9 @@ require "settings/init.php";
     <!-- Header -->
     <div class="r-header">
         <a href="details.php" class="back-btn">
-        <i class="bi bi-arrow-left"></i>
+        <i class="bi bi-arrow-left custom-icon"></i>
         </a>
-        <h1>Rapporter</h1>
+        <h1 class="custom-heading">Rapporter</h1>
     </div>
 
     <div class="app-wrapper">
@@ -42,7 +42,7 @@ require "settings/init.php";
     <div class="location-card">
         <div class="d-flex align-items-center justify-content-between">
             <div class="location-info">
-                <h2 class="fw-bold">Netto Vesterborg Allé</h2>
+                <h2 class="fw-bold custom-h2">Netto Vesterborg Allé</h2>
                 <div class="rating fw-bold">
                     <span class="stars">★★★★★</span>
                     <span class="score">5.0</span>
@@ -54,7 +54,7 @@ require "settings/init.php";
 
     <!-- Checkliste -->
     <div class="section">
-        <h3><img src="img/checklist/check.png" style="width: 20px"  alt="check"> Checkliste</h3>
+        <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px"  alt="check"> Checkliste</h3>
 
         <div class="check-item">
             <span><img src="img/checklist/rampe.png" style="width: 30px" alt="rampe"> Rampe</span>
@@ -111,7 +111,7 @@ require "settings/init.php";
 
     <!-- Upload -->
     <div class="section">
-        <h3 class="fw-bold">Upload billede <span>(valgfri)</span></h3>
+        <h3 class="fw-bold custom-h3">Upload billede <span>(valgfri)</span></h3>
         <div class="upload-buttons">
             <button class="upload-btn" onclick="alert('funktion kommer snart')">
                 <i class="bi bi-camera"></i>
