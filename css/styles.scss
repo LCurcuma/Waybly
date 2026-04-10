@@ -652,6 +652,10 @@ body {
   font-size: 16px;
   margin-left: 60px;
 
+  @include media-breakpoint-up(sm){
+    margin-left: 80px;
+  }
+
   @include media-breakpoint-up(md){
     width: 60%;
     height: 52px;
