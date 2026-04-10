@@ -88,6 +88,10 @@ require "settings/init.php";
             <!-- Dør filter knap -->
             <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
                 <div class="bi bi-door-open-fill fs-5"></div>Dør</div>
+
+            <!-- Plads filter knap -->
+            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                <div class="bi bi bi-box-fill fs-5"></div>Plads</div>
         </div>
     </div>
 </div>
@@ -172,6 +176,24 @@ require "settings/init.php";
                     stjerner += '<i class="bi bi-star text-info"></i>';
                 }
             }
+
+            // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+            sted.markings.sort(function(a, b) {
+                // Vi definerer en rækkefølge/værdi for hver farve
+                const colorOrder = {
+                    "success": 1,
+                    "succes": 1, // Tager højde for slåfejlen i din JSON
+                    "warning": 2,
+                    "danger": 3
+                };
+
+                // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
+                const weightA = colorOrder[a.status] || 4;
+                const weightB = colorOrder[b.status] || 4;
+
+                // Sorter laveste tal først
+                return weightA - weightB;
+            });
 
             // tags
             let tags = '';
