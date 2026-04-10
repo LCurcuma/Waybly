@@ -106,7 +106,7 @@ require "settings/init.php";
     </div>
 
     <div class="mb-5 pb-5">
-        <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
+        <div class="h5 fw-bold mb-3">Bedste anmeldelser</div>
         <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="reviews-container"></div>
     </div>
 </div>
@@ -139,9 +139,19 @@ require "settings/init.php";
 
             const data = await response.json();
 
-            // Vis kort begge steder
+            //Vis kortene usorteret i "Steder tæt på dig"
             tegnKort(data, 'places-container');
-            tegnKort(data, 'reviews-container');
+
+            // Lav en kopi af dataen, så vi ikke ødelægger den originale rækkefølge
+            const sorteretData = [...data];
+
+            // 3. Sorter kopien efter rating (højeste tal først)
+            sorteretData.sort(function(a, b) {
+                return parseFloat(b.rating) - parseFloat(a.rating);
+            });
+
+            // 4. Vis de sorterede kort i "Seneste anmeldelser"
+            tegnKort(sorteretData, 'reviews-container');
 
         } catch (error) {
             console.error("Fejl:", error);
@@ -179,10 +189,10 @@ require "settings/init.php";
 
             // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
             sted.markings.sort(function(a, b) {
+
                 // Vi definerer en rækkefølge/værdi for hver farve
                 const colorOrder = {
                     "success": 1,
-                    "succes": 1, // Tager højde for slåfejlen i din JSON
                     "warning": 2,
                     "danger": 3
                 };
