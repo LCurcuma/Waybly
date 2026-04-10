@@ -51,8 +51,12 @@ require "settings/init.php";
             <div class="location-info">
                 <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
                 <div class="rating fw-bold">
-                    <span class="stars">★★★★★</span>
-                    <span class="score">5.0</span>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-half" style="color: #00B4D7"></i>
+                    <span class="score">4.5</span>
                 </div>
             </div>
             <img src="https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp" class="location-img" alt="netto">
