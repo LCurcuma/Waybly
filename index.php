@@ -241,7 +241,9 @@ require "settings/init.php";
 
             // laver cards
             const kort = `
-            <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px;">
+            <div class="h-place-card flex-shrink-0 mb-3"
+                style="width: 260px; ${sted.link ? 'cursor:pointer;' : ''}"
+                onclick="${sted.link ? `window.location.href='${sted.link}'` : ''}">
 
                 <img src="${sted.photo_links[0]}" class="h-card-img">
 

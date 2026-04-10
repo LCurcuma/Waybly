@@ -1,6 +1,7 @@
 [
   {
     "name": "Netto",
+    "link": "details.php",
     "latlong": [54.77152812312959, 11.867858161577413],
     "rating": "4.5",
     "description": "God tilgængelig butik med brede gange og nem adgang.",
@@ -27,6 +28,7 @@
   },
   {
     "name": "Tid & Stil",
+    "link": "",
     "latlong": [54.76598220255394, 11.873159915103322],
     "rating": "3",
     "description": "Moderne smykkebutik med gode parkeringsmuligheder",
@@ -42,6 +44,7 @@
   },
   {
     "name": "Duomo",
+    "link": "",
     "latlong": [54.76320584541525, 11.867703990463394],
     "rating": "4.3",
     "description": "Italiensk restaurant med autentisk stemning, elevator og nem adgang",
@@ -57,6 +60,7 @@
   },
   {
     "name": "Rema 1000",
+    "link": "",
     "latlong": [54.7673612842753, 11.8819716732638],
     "rating": "4.5",
     "description": "Stor butik med masser af plads og gode adgangsforhold.",
@@ -72,6 +76,7 @@
   },
   {
     "name": "Zealand",
+    "link": "",
     "latlong": [54.76471988779447, 11.878865717062656],
     "rating": "4.9",
     "description": "Hvor kvalitet møder ambition – et af Danmarks bedste studier!",
@@ -87,6 +92,7 @@
   },
   {
     "name": "Slikparadiset",
+    "link": "",
     "latlong": [54.767468242068645, 11.867649334358386],
     "rating": "1.5",
     "description": "Lille butik med begrænset plads og begrænset tilgængelighed.",
