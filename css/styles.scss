@@ -562,9 +562,9 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   }
 
-  .happy {background: #16a31d;}
-  .neutral {background: #f7e40f;}
-  .sad {background: #e31b1b;}
+  .happy {background:$success;}
+  .neutral {background: $warning;}
+  .sad {background: $danger;}
 
 }
 
