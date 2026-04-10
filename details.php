@@ -22,7 +22,7 @@
 
 
 <div class="details">
-    <div class="headerimg" style="background-image: url('img/shop/shop1-netto.jpeg');">
+    <div class="headerimg" style="background-image: url('https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp');">
         <a href="map.php">
             <i class="backbtn fa-solid fa-angle-left pt-3 ps-2" style="color: white;"></i>
         </a>
