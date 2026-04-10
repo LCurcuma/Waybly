@@ -43,13 +43,13 @@ require "settings/init.php";
     <div class="location-card">
         <div class="d-flex align-items-center justify-content-between">
             <div class="location-info">
-                <h2 class="fw-bold custom-h2">Netto Vesterborg Allé</h2>
+                <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
                 <div class="rating fw-bold">
                     <span class="stars">★★★★★</span>
                     <span class="score">5.0</span>
                 </div>
             </div>
-            <img src="img/shop/shop1-netto.jpg" class="location-img" alt="netto">
+            <img src="img/shop/shop1-netto.jpeg" class="location-img" alt="netto">
         </div>
     </div>
 
