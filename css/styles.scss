@@ -40,7 +40,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
   font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 //--------------- BODY ---------------//
 
@@ -55,7 +54,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px -33px 49px -22px rgba(0,0,0,0.48);
 }
 
 .nav-item {
@@ -241,598 +240,486 @@ body {
 //--------------- NAVBAR ---------------//
 
 
-
-//--------------- DETAILS SIDE - HEADER ---------------//
-.headerimg{
-  min-height: 250px;
-  background-size: cover;
+//--------------- H.CONTAINER ---------------//
+.h-container {
+  width: 100%;
+  background-color: $white;
   position: relative;
-  object-fit: cover;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+//--------------- H.CONTAINER ---------------//
 
 
-  @include media-breakpoint-up(md) {
-    height: 270px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 280px;
-  }
+//--------------- H.HEADER ---------------//
+.h-header {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-.backbtn{
+.h-logo {
+  padding-left: 5px;
+  width: 40px;
+  height: auto;
+  transition: 0.2s ease-in-out;
+}
+
+.h-search-bar {
+  overflow: hidden;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.2s ease-in-out;
+}
+
+//BTN Hover effekt
+.h-btn {
+  transition-duration: 0.4s;
+}
+
+  .h-btn:hover {
+    background-color: #014c94;
+    color: white;
+  }
+
+//Header breakpoints (sm)
+@include media-breakpoint-up(sm) {
+  .h-search-bar {
+    max-width: 450px;
+  }
+
+  .h-logo {
+    padding-left: 10px;
+    width: 55px;
+    }
+}
+
+//Header breakpoints (md)
+@include media-breakpoint-up(md) {
+  .h-search-bar {
+    max-width: 525px;
+  }
+
+  .h-logo {
+    padding-left: 15px;
+    width: 65px;
+  }
+}
+//--------------- H.HEADER ---------------//
+
+
+//--------------- H.CARDS ---------------//
+.h-place-card {
+  width: 260px;
   border: none;
-  background-color: transparent;
-  font-size: 28px;
-  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
 
-  @include media-breakpoint-up(sm) {
-    font-size: 31px;
+  .h-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: 33px;
-  }
+  .h-description-text {
+    font-size: 0.8rem;
+    color: #868989;
+    overflow: hidden;
+    line-height: 1.4;
 
-  @include media-breakpoint-up(mg) {
-    font-size: 36px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 39px;
+    //viser kun 2 linjer og slutter med "..."
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }
-//--------------- HEADER ---------------//
+//--------------- H.CARDS ---------------//
 
+//---------------Rapport--------------//
 
-
-//--------------- INFO BIO ---------------//
-
-.details{
-  position: relative;
+.page-rapport{
+  background-color: $white;
 }
 
-.infobio{
-  background: $white;
-  margin: -50px 15px 26px;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-  position: relative;
+.app-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #F4F6F8;
+  min-height: 100vh;
+
+  @include media-breakpoint-up(sm){
+    max-width: 576px;
+  }
+
+  @include media-breakpoint-up(md){
+    max-width: 768px;
+    padding: 20px;
+  }
+
+  @include media-breakpoint-up(mg){
+    max-width: 850px;
+    padding: 24px;
+  }
 }
 
-.overskriftbio{
-  font-size: 24px;
-  margin-bottom: 2px;
-  font-weight: bolder;
-  letter-spacing: 1px;
 
-  @include media-breakpoint-up(sm) {
+.r-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: $primary;
+  color: white;
+  padding: 20px 16px 60px 16px;
+
+  @include media-breakpoint-up(md){
+    padding: 30px 24px 80px 24px;
+  }
+
+  @include media-breakpoint-up(mg){
+    padding: 40px 28px 90px 28px;
+  }
+}
+
+.back-btn {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-up(mg){
+    font-size: 24px;
+  }
+}
+
+.custom-heading{
+  font-size: 20px;
+  margin: 0;
+
+  @include media-breakpoint-up(md){
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(mg){
     font-size: 28px;
   }
-
-  @include media-breakpoint-up(md) {
-    font-size: 32px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 36px;
-  }
-
 }
 
-.stjernerbio{
-  font-size: 18px;
+.custom-icon {
+  font-size: 20px;
 
-  @include media-breakpoint-up(sm) {
-    font-size: 21px;
-  }
-
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(mg){
     font-size: 24px;
   }
-
-}
-
-.tekstbio{
-  margin-bottom: 0;
-  margin-top: 6px;
-  font-size: 15px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 16px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 17px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 19px;
-  }
-}
-//--------------- INFO BIO ---------------//
-
-
-
-//--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
-
-.overskrifttilgænge{
-  font-size: 22px;
-  margin-left: 33px;
-  font-weight: bold;
-  letter-spacing: 1px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 26px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 30px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 34px;
-  }
-
-}
-
-.tilgængelighedicon{
-  font-size: 23px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 27px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 31px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 35px;
-  }
-}
-
-.statustilgængelighedbokse{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px;
-  padding-top: 15px;
-  margin-left: 22px;
-}
-
-.statusoverskrift{
-  font-size: 17px;
-  padding-top: 3px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 19px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 20px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 21px;
-  }
 }
 
 
-.statusiconsvg{
-  height: 23px;
-  width: 23px;
-
-  @include media-breakpoint-up(sm) {
-    height: 24px;
-    width: 24px;
-  }
-
-  @include media-breakpoint-up(md) {
-    height: 27px;
-    width: 27px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    height: 30px;
-    width: 30px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: 33px;
-    width: 33px;
-  }
-}
-
-.statusicon{
-  font-size: 18px;
-  padding-top: 6px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 20px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 22px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 24px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 26px;
-  }
-}
-
-.statusbox {
-  padding: 5px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-  user-select: none;
-}
-.status-ok {
-  background-color: $success;
-  border: darkgreen solid 1px;
-}
-.status-error {
-  background-color: $danger;
-  border: darkred solid 1px;
-}
-.status-warning {
-  background-color: $warning;
-  border: lightsalmon solid 1px;
-}
-
-.statuspopup {
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: -22px;
-  right: 10px;
-  width: 220px;
+.location-card {
   background: white;
-  color: #333;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  z-index: 1000000;
-  font-weight: normal;
-  font-size: 15px;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-top: -40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md){
+    padding: 16px;
+  }
+
+  @include media-breakpoint-up(mg){
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .custom-h2 {
     font-size: 16px;
+    margin: 0;
+
+    @include media-breakpoint-up(md){
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-up(mg){
+      font-size: 24px;
+    }
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: 17px;
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+
+    @include media-breakpoint-up(md){
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-up(mg){
+      font-size: 20px;
+    }
   }
 
-  @include media-breakpoint-up(mg) {
-    font-size: 18px;
+  .stars {
+    color: $secondary;
   }
 
-  @include media-breakpoint-up(lg) {
-    font-size: 19px;
-  }
-}
-
-.statuspopup.active {
-  display: block;
-}
-
-//--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
-
-
-//--------------- KOMMENTARSEKTION ---------------//
-
-.kommentarer{
-  margin-top: 43px;
-}
-
-.overskriftkommentar {
-  font-size: 22px;
-  margin-left: 33px;
-  font-weight: bold;
-  letter-spacing: 1px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 26px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 30px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 34px;
-  }
-}
-
-.kommentaricon {
-  font-size: 23px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 27px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 31px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 35px;
-  }
-}
-
-.kommentarboks {
-  padding-left: 30px;
-  padding-right: 30px;
-  overflow-y: auto;
-  background-color: #F9FEFF;
-  padding-top: 20px;
-}
-
-
-.kommentarcard {
-  background: white;
-  border-radius: 15px;
-  padding: 18px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.userinfo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-}
-
-.usercirkel {
-  width: 45px;
-  height: 45px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-
-  @include media-breakpoint-up(sm) {
-    font-size: 27px;
-    width: 50px;
-    height: 50px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 30px;
-    width: 55px;
-    height: 55px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 34px;
+  .location-img {
     width: 60px;
     height: 60px;
-  }
+    border-radius: 10px;
+    object-fit: cover;
 
-  @include media-breakpoint-up(lg) {
-    font-size: 37px;
-    width: 65px;
-    height: 65px;
+    @include media-breakpoint-up(md){
+      width: 70px;
+      height: 70px;
+    }
+
+    @include media-breakpoint-up(mg){
+      width: 80px;
+      height: 80px;
+    }
   }
 }
 
-.komusertekst {
-  display: block;
-  font-size: 17px;
-  margin-bottom: 0;
-  margin-top: 2px;
+.section {
+  margin-top: 20px;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(mg){
+    margin-top: 28px;
+  }
+
+  .custom-h3 {
     font-size: 18px;
-  }
+    margin-bottom: 10px;
 
-  @include media-breakpoint-up(md) {
-    font-size: 19px;
-  }
+    @include media-breakpoint-up(md){
+      font-size: 20px;
+    }
 
-  @include media-breakpoint-up(mg) {
+    @include media-breakpoint-up(mg){
+      font-size: 22px;
+    }
+
+    span {
+      color: gray;
+      font-weight: normal;
+      margin-left: 5px;
+    }
+  }
+}
+
+
+.check-item {
+  background: $white;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media-breakpoint-up(md){
+    padding: 14px 16px;
     font-size: 20px;
   }
 
-  @include media-breakpoint-up(lg) {
-    font-size: 21px;
+  @include media-breakpoint-up(mg){
+    padding: 18px 20px;
+    border-radius: 16px;
+    font-size: 24px;
+  }
+
+  .icons i {
+    font-size: 30px;
+    margin-left: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    @include media-breakpoint-up(md){
+      width: 58px;
+      height: 58px;
+      font-size: 35px;
+    }
+
+    @include media-breakpoint-up(mg){
+      width: 65px;
+      height: 65px;
+      font-size: 40px;
+    }
+  }
+
+  .icons i.active {
+    background: currentColor;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .happy {background: #16a31d;}
+  .neutral {background: #f7e40f;}
+  .sad {background: #e31b1b;}
+
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 110px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  padding: 10px;
+  background: $white;
+  resize: none;
+
+  @include media-breakpoint-up(mg){
+    height: 140px;
+    padding: 14px;
   }
 }
 
-.datotekst {
-  font-size: 12px;
-  margin-bottom: 0;
-  margin-top: -2px;
 
-  @include media-breakpoint-up(sm) {
-    font-size: 13px;
+.upload-buttons {
+  display: flex;
+  gap: 10px;
+
+  @include media-breakpoint-up(mg){
+    gap: 14px;
   }
+}
 
-  @include media-breakpoint-up(md) {
+.upload-btn {
+  flex: 1;
+  background: $white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-size: 12px;
+  opacity: 0.7;
+
+  @include media-breakpoint-up(md){
+    padding: 14px;
     font-size: 14px;
   }
 
-  @include media-breakpoint-up(mg) {
-    font-size: 15px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 16px;
+  @include media-breakpoint-up(mg){
+    padding: 18px;
+    font-size: 14px;
   }
 }
 
-.stjernerkom {
-  margin-left: auto;
-  color: #00B4D7;
+
+.upload-btn i{
+  background: $secondary;
+  color: $white;
   font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(mg){
+    width: 44px;
+    height: 44px;
     font-size: 20px;
   }
-
-  @include media-breakpoint-up(md) {
-    font-size: 22px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 24px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 26px;
-  }
 }
 
+.submit-btn {
+  width: 70%;
+  height: 48px;
+  background: $secondary;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 60px;
 
-.statuscheck {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: $success;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.statuscheck i {
-  font-size: 24px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 26px;
+  @include media-breakpoint-up(md){
+    width: 60%;
+    height: 52px;
+    margin-left: 140px;
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: 28px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 30px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 32px;
-  }
-}
-
-.statuscheck2{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: $warning;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.i2 {
-  font-size: 24px;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 26px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 28px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 30px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 32px;
-  }
-}
-
-.statuscheck3{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: $danger;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.i3{
-    font-size: 24px;
-
-    @include media-breakpoint-up(sm) {
-      font-size: 26px;
-    }
-
-    @include media-breakpoint-up(md) {
-      font-size: 28px;
-    }
-
-    @include media-breakpoint-up(mg) {
-      font-size: 30px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      font-size: 32px;
-    }
-}
-
-.statuschecktekst{
-  font-size: 17px;
-
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(mg){
+    width: 50%;
+    height: 56px;
     font-size: 18px;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 19px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 20px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 21px;
+    margin-left: 200px;
   }
 }
 
+.success-modal {
+  border-radius: 20px;
+  padding: 30px 20px;
+  border: none;
 
-.kommentartekst {
-  color: #353535;
-  line-height: 1.4;
-  font-size: 15px;
+  @include media-breakpoint-up(mg){
+    padding: 40px 30px;
+  }
+}
 
-  @include media-breakpoint-up(sm) {
+// Grøn cirkel
+.success-icon {
+  width: 70px;
+  height: 70px;
+  background: #2ECC71;
+  color: white;
+
+  border-radius: 50%;
+  font-size: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px auto;
+
+  @include media-breakpoint-up(mg){
+    width: 90px;
+    height: 90px;
+    font-size: 40px;
+  }
+}
+
+// "Tak!"
+.success-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+
+  @include media-breakpoint-up(mg){
+    font-size: 24px;
+  }
+}
+
+// Tekst under
+.success-text {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+
+  @include media-breakpoint-up(mg){
     font-size: 16px;
   }
-
-  @include media-breakpoint-up(md) {
-    font-size: 17px;
-  }
-
-  @include media-breakpoint-up(mg) {
-    font-size: 18px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    font-size: 19px;
-  }
-
-
 }
 
-
-//--------------- KOMMENTARSEKTION ---------------//
+//---------------Rapport--------------//

@@ -1,0 +1,107 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+//Bootstrap breakpoints, men custom breakpoint
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        mg: 850px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 1950px,
+);
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+$black: #121212;
+$white: #F9FEFF;
+
+$primary: #01085E;
+$secondary: #0078B7;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+        "farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+//--------------- KORT ---------------
+#map{
+  height: 100vh;
+  width: 100%;
+}
+
+//Tilbage knap
+.back-btn{
+  background: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.btn-cont{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.burger-btn{
+  background: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.card-image{
+  width: 100%;
+}
+
+.h2_text_popup{
+  font-size: 0.9rem;
+}
+
+.link_detaljer{
+  padding:5px 25px;
+  background-color: $secondary;
+  color: $white !important;
+  border-radius: 10px;
+}
+
+//markers
+.marker-warning{
+  color: $warning;
+}
+
+.marker-success{
+  color: $success;
+}
+
+.marker-danger{
+  color: $danger;
+}
+
+//burger menu
+.burgerMenu{
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.hidden{
+  display: none;
+}
