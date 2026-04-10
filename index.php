@@ -38,7 +38,7 @@ require "settings/init.php";
 <body>
 
 <!--------------- LOADER --------------->
-<div id="h-loader-wrapper">
+<div id="loader-wrapper">
     <div class="text-center">
         <div class="spinner-border text-secondary" role="status">
             <span class="visually-hidden">Loader...</span>
@@ -295,11 +295,11 @@ require "settings/init.php";
 <script>
     //Skjul loader når siden er helt færdig med at loade
     window.addEventListener('load', function() {
-        const loader = document.getElementById('h-loader-wrapper');
+        const loader = document.getElementById('loader-wrapper');
 
         // Vi giver den et lille øjeblik (300ms), så det ser blødt ud
         setTimeout(function() {
-            loader.classList.add('h-loader-hidden');
+            loader.classList.add('loader-hidden');
         }, 500);
     });
 </script>

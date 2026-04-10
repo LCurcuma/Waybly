@@ -244,9 +244,9 @@ body {
 //--------------- NAVBAR ---------------//
 
 
-//-------------- H-LOADER --------------//
+//--------------- LOADER ---------------//
 //Baggrunden på loaderen
-#h-loader-wrapper {
+#loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -261,11 +261,11 @@ body {
 }
 
 //Tilføjer via JS for at skjule den
-.h-loader-hidden {
+.loader-hidden {
   opacity: 0;
   visibility: hidden;
 }
-//-------------- H-LOADER --------------//
+//--------------- LOADER ---------------//
 
 
 //--------------- H.CONTAINER ---------------//
