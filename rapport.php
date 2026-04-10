@@ -23,6 +23,12 @@ require "settings/init.php";
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Favicon: https://favicon.io/favicon-converter/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
 </head>
 
 <body class="page-rapport">
@@ -43,13 +49,17 @@ require "settings/init.php";
     <div class="location-card">
         <div class="d-flex align-items-center justify-content-between">
             <div class="location-info">
-                <h2 class="fw-bold custom-h2">Netto Vesterborg Allé</h2>
+                <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
                 <div class="rating fw-bold">
-                    <span class="stars">★★★★★</span>
-                    <span class="score">5.0</span>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                    <i class="bi bi-star-half" style="color: #00B4D7"></i>
+                    <span class="score">4.5</span>
                 </div>
             </div>
-            <img src="img/shop/shop1-netto.jpg" class="location-img" alt="netto">
+            <img src="https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp" class="location-img" alt="netto">
         </div>
     </div>
 
