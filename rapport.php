@@ -49,7 +49,7 @@ require "settings/init.php";
                     <span class="score">5.0</span>
                 </div>
             </div>
-            <img src="img/shop/shop1-netto.jpeg" class="location-img" alt="netto">
+            <img src="https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp" class="location-img" alt="netto">
         </div>
     </div>
 
