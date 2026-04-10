@@ -728,6 +728,7 @@ body {
 
 //---------------Rapport--------------//
 
+
 //--------------- DETAILS SIDE - HEADER ---------------//
 .headerimg{
   min-height: 250px;
@@ -763,9 +764,7 @@ body {
     font-size: 36px;
   }
 
-  @include media-breakpoint-up(lg) {
-    font-size: 39px;
-  }
+
 }
 //--------------- HEADER ---------------//
 
@@ -775,6 +774,7 @@ body {
 
 .details{
   position: relative;
+  width: 100%;
 }
 
 .infobio{
@@ -804,6 +804,9 @@ body {
     font-size: 36px;
   }
 
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
 }
 
 .stjernerbio{
@@ -817,6 +820,9 @@ body {
     font-size: 24px;
   }
 
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+  }
 }
 
 .tekstbio{
@@ -837,7 +843,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 //--------------- INFO BIO ---------------//
@@ -864,6 +870,10 @@ body {
     font-size: 34px;
   }
 
+  @include media-breakpoint-up(lg) {
+    font-size: 22px;
+  }
+
 }
 
 .tilgængelighedicon{
@@ -879,6 +889,10 @@ body {
 
   @include media-breakpoint-up(mg) {
     font-size: 35px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 23px;
   }
 }
 
@@ -908,7 +922,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
@@ -933,8 +947,8 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    height: 33px;
-    width: 33px;
+    height: 23px;
+    width: 23px;
   }
 }
 
@@ -955,7 +969,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 26px;
+    font-size: 18px;
   }
 }
 
@@ -1008,7 +1022,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
@@ -1042,6 +1056,10 @@ body {
   @include media-breakpoint-up(mg) {
     font-size: 34px;
   }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 22px;
+  }
 }
 
 .kommentaricon {
@@ -1058,6 +1076,11 @@ body {
   @include media-breakpoint-up(mg) {
     font-size: 35px;
   }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 23px;
+  }
+
 }
 
 .kommentarboks {
@@ -1113,9 +1136,9 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 37px;
-    width: 65px;
-    height: 65px;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -1138,7 +1161,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
@@ -1160,7 +1183,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -1182,7 +1205,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 26px;
+    font-size: 18px;
   }
 }
 
@@ -1211,7 +1234,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
@@ -1240,7 +1263,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
@@ -1269,7 +1292,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
@@ -1289,7 +1312,7 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
@@ -1311,9 +1334,93 @@ body {
   }
 
   @include media-breakpoint-up(lg) {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
 //--------------- KOMMENTARSEKTION ---------------//
 
+.desktopfooter {
+  display: none;
+}
+
+
+@media (min-width: 1024px) {
+  .detmodal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7) !important; /* !important sikrer at den er gennemsigtig */
+    overflow-x: hidden;
+  }
+
+  .details{
+    width: 100%;
+  }
+
+  .detclosemodalbtn{
+    color: white;
+    font-size: 30px;
+    padding-left: 16px;
+  }
+
+  /* 2. SELVE BOKSEN (Må IKKE fylde 100%) */
+  .detmodalcontent {
+    background-color: #F9FEFF;
+    margin: 5vh auto;
+    width: 500px !important;
+    height: auto;
+    max-height: 90vh;
+    border-radius: 15px;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    display: block !important;
+  }
+
+  /* 3. SKJUL NAVIGATION */
+  nav, .navigation-wrapper, .navbar {
+    display: none !important;
+  }
+
+  .desktopfooter {
+    display: block !important;
+    padding-bottom: 15px !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+  }
+
+  .reportbtn {
+    background: $primary !important;
+    border: 1px solid #010439;
+    color: #F9FEFF !important;
+    padding: 8px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+  }
+
+  .bottom-shadow-hint {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%
+    );
+
+    pointer-events: none;
+    z-index: 10;
+  }
+
+
+}
