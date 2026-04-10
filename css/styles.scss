@@ -257,13 +257,24 @@ body {
 }
 
 .h-logo {
-  width: 45px;
+  padding-left: 5px;
+  width: 40px;
   height: auto;
 }
 
 .h-search-bar {
   overflow: hidden;
 }
+
+//BTN Hover effekt
+.h-btn {
+  transition-duration: 0.4s;
+}
+
+  .h-btn:hover {
+    background-color: #014c94;
+    color: white;
+  }
 //--------------- H.HEADER ---------------//
 
 

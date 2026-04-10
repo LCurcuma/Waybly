@@ -58,7 +58,9 @@ require "settings/init.php";
 
         <!-- Knap til kort -->
         <div class="d-flex mt-4 justify-content-center">
-            <div class="btn rounded-4 btn-secondary px-5 py-2 fw-semibold text-white">Åben kort</div>
+            <a href="map.php" class="btn rounded-4 btn-secondary px-5 py-2 fw-semibold text-white h-btn">
+                Åben kort
+            </a>
         </div>
     </div>
 </div>
