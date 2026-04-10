@@ -200,7 +200,7 @@ require "settings/init.php";
 </div>
 </div>
 </div>
-<a href="" class="link_detaljer">Se detaljer</a>
+<a href="details.php" class="link_detaljer">Se detaljer</a>
 </div>
     `);
             });
