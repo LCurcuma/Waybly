@@ -9,6 +9,7 @@ require "settings/init.php";
 <!DOCTYPE html>
 <html lang="da">
 <head>
+
     <meta charset="utf-8">
     
     <title>Waybly</title>
@@ -26,8 +27,6 @@ require "settings/init.php";
 
     <!-- AOS - Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-
 
     <!-- Favicon: https://favicon.io/favicon-converter/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/logo/favicons/apple-touch-icon.png">
@@ -277,6 +276,7 @@ require "settings/init.php";
 </script>
 <!----------- CARDS JS SCRIPT ---------->
 
+
 <!------------ AOS LIBRARY ------------>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -284,8 +284,7 @@ require "settings/init.php";
 </script>
 <!------------ AOS LIBRARY ------------>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
 </html>
