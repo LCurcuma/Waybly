@@ -723,3 +723,595 @@ body {
 }
 
 //---------------Rapport--------------//
+
+//--------------- DETAILS SIDE - HEADER ---------------//
+.headerimg{
+  min-height: 250px;
+  background-size: cover;
+  position: relative;
+  object-fit: cover;
+
+
+  @include media-breakpoint-up(md) {
+    height: 270px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 280px;
+  }
+}
+
+.backbtn{
+  border: none;
+  background-color: transparent;
+  font-size: 28px;
+  position: absolute;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 31px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 33px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 36px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 39px;
+  }
+}
+//--------------- HEADER ---------------//
+
+
+
+//--------------- INFO BIO ---------------//
+
+.details{
+  position: relative;
+}
+
+.infobio{
+  background: $white;
+  margin: -50px 15px 26px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.overskriftbio{
+  font-size: 24px;
+  margin-bottom: 2px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 36px;
+  }
+
+}
+
+.stjernerbio{
+  font-size: 18px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 21px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+  }
+
+}
+
+.tekstbio{
+  margin-bottom: 0;
+  margin-top: 6px;
+  font-size: 15px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 19px;
+  }
+}
+//--------------- INFO BIO ---------------//
+
+
+
+//--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
+
+.overskrifttilgænge{
+  font-size: 22px;
+  margin-left: 33px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 34px;
+  }
+
+}
+
+.tilgængelighedicon{
+  font-size: 23px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 27px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 31px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 35px;
+  }
+}
+
+.statustilgængelighedbokse{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px;
+  padding-top: 15px;
+  margin-left: 22px;
+}
+
+.statusoverskrift{
+  font-size: 17px;
+  padding-top: 3px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 19px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+
+
+.statusiconsvg{
+  height: 23px;
+  width: 23px;
+
+  @include media-breakpoint-up(sm) {
+    height: 24px;
+    width: 24px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 27px;
+    width: 27px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    height: 30px;
+    width: 30px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 33px;
+    width: 33px;
+  }
+}
+
+.statusicon{
+  font-size: 18px;
+  padding-top: 6px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 22px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 26px;
+  }
+}
+
+.statusbox {
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+.status-ok {
+  background-color: $success;
+  border: darkgreen solid 1px;
+}
+.status-error {
+  background-color: $danger;
+  border: darkred solid 1px;
+}
+.status-warning {
+  background-color: $warning;
+  border: lightsalmon solid 1px;
+}
+
+.statuspopup {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: -22px;
+  right: 10px;
+  width: 220px;
+  background: white;
+  color: #333;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1000000;
+  font-weight: normal;
+  font-size: 15px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 19px;
+  }
+}
+
+.statuspopup.active {
+  display: block;
+}
+
+//--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
+
+
+//--------------- KOMMENTARSEKTION ---------------//
+
+.kommentarer{
+  margin-top: 43px;
+}
+
+.overskriftkommentar {
+  font-size: 22px;
+  margin-left: 33px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 34px;
+  }
+}
+
+.kommentaricon {
+  font-size: 23px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 27px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 31px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 35px;
+  }
+}
+
+.kommentarboks {
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow-y: auto;
+  background-color: #F9FEFF;
+  padding-top: 20px;
+}
+
+
+.kommentarcard {
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.usercirkel {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  @include media-breakpoint-up(sm) {
+    font-size: 27px;
+    width: 50px;
+    height: 50px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+    width: 55px;
+    height: 55px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 34px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 37px;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.komusertekst {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 0;
+  margin-top: 2px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 19px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+
+.datotekst {
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-top: -2px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 13px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+}
+
+.stjernerkom {
+  margin-left: auto;
+  color: #00B4D7;
+  font-size: 18px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 22px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 26px;
+  }
+}
+
+
+.statuscheck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $success;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.statuscheck i {
+  font-size: 24px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 32px;
+  }
+}
+
+.statuscheck2{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $warning;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.i2 {
+  font-size: 24px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 32px;
+  }
+}
+
+.statuscheck3{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $danger;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.i3{
+  font-size: 24px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 26px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 32px;
+  }
+}
+
+.statuschecktekst{
+  font-size: 17px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 19px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 20px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 21px;
+  }
+}
+
+
+.kommentartekst {
+  color: #353535;
+  line-height: 1.4;
+  font-size: 15px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 19px;
+  }
+}
+
+
