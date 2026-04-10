@@ -37,6 +37,18 @@ require "settings/init.php";
 </head>
 <body>
 
+<!--------------- LOADER --------------->
+<div id="loader-wrapper">
+    <div class="text-center">
+        <div class="spinner-border text-secondary" role="status">
+            <span class="visually-hidden">Loader...</span>
+        </div>
+        <div class="mt-2 text-secondary fw-medium">Henter oplevelser...</div>
+    </div>
+</div>
+<!--------------- LOADER --------------->
+
+
 <!--------------- HEADER --------------->
 <div class="h-container">
     <div class="h-header px-3 pt-4 pb-4 bg-primary">
@@ -277,6 +289,21 @@ require "settings/init.php";
     }
 </script>
 <!----------- CARDS JS SCRIPT ---------->
+
+
+<!----------- LOADER JS SCRIPT ----------->
+<script>
+    //Skjul loader når siden er helt færdig med at loade
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader-wrapper');
+
+        // Vi giver den et lille øjeblik (300ms), så det ser blødt ud
+        setTimeout(function() {
+            loader.classList.add('loader-hidden');
+        }, 500);
+    });
+</script>
+<!----------- LOADER JS SCRIPT ----------->
 
 
 <!------------ AOS LIBRARY ------------>
