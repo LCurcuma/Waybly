@@ -1,17 +1,19 @@
 [
   {
-    "name": "Netto Fejøgade",
-    "latlong": [54.762883,11.868463],
+    "name": "Netto",
+    "link": "details.php",
+    "latlong": [54.77152812312959, 11.867858161577413],
     "rating": "4.5",
     "description": "God tilgængelig butik med brede gange og nem adgang.",
     "markings": [
       { "navn": "Rampe", "status": "success" },
       { "navn": "Dør", "status": "success" },
-      { "navn": "Toilet", "status": "danger" },
-      { "navn": "Parkering", "status": "warning" }
+      { "navn": "Toilet", "status": "warning" },
+      { "navn": "Plads", "status": "success" },
+      { "navn": "Parkering", "status": "success" }
     ],
-    "markerColor": "marker-warning",
-    "photo_links": ["https://placehold.net/default.png"],
+    "markerColor": "marker-success",
+    "photo_links": ["https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"],
     "comments": [
       {
         "username": "Mette Sørensen",
@@ -25,54 +27,83 @@
     ]
   },
   {
-    "name": "Rema 1000",
-    "latlong": [54.767276,11.881904],
-    "rating": "3.0",
-    "description": "Moderne butik med gode parkeringsforhold.",
+    "name": "Tid & Stil",
+    "link": "",
+    "latlong": [54.76598220255394, 11.873159915103322],
+    "rating": "3",
+    "description": "Moderne smykkebutik med gode parkeringsmuligheder",
     "markings": [
       { "navn": "Parkering", "status": "success" },
-      { "navn": "Rampe", "status": "danger" }
+      { "navn": "Rampe", "status": "warning" },
+      { "navn": "Dør", "status": "warning" },
+      { "navn": "Plads", "status": "success" },
+      { "navn": "Toilet", "status": "danger" }
     ],
     "markerColor": "marker-warning",
-    "photo_links": ["https://placehold.net/default.png"]
+    "photo_links": ["https://tidstil.dk/wp-content/uploads/2025/08/20250821_164118-1024x1024.jpg"]
   },
   {
-    "name": "Føtex Nørreport",
-    "latlong": [54.758865,11.854632],
-    "rating": "5.0",
-    "description": "Stor butik med elevator og gode adgangsforhold.",
+    "name": "Duomo",
+    "link": "",
+    "latlong": [54.76320584541525, 11.867703990463394],
+    "rating": "4.3",
+    "description": "Italiensk restaurant med autentisk stemning, elevator og nem adgang",
     "markings": [
-      { "navn": "Toilet", "status": "success" },
-      { "navn": "Dør", "status": "success" },
       { "navn": "Rampe", "status": "success" },
+      { "navn": "Dør", "status": "success" },
+      { "navn": "Toilet", "status": "danger" },
+      { "navn": "Plads", "status": "warning" },
       { "navn": "Parkering", "status": "success" }
     ],
     "markerColor": "marker-success",
-    "photo_links": ["https://placehold.net/default.png"]
+    "photo_links": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrFMVODpmXwfCXdeg5You6r3d2jgBn6MoNw&s"]
   },
   {
-    "name": "Bilka Fields",
-    "latlong": [55.631002,12.579481],
-    "rating": "1.2",
-    "description": "Stor butik med masser af plads og gode faciliteter.",
+    "name": "Rema 1000",
+    "link": "",
+    "latlong": [54.7673612842753, 11.8819716732638],
+    "rating": "4.5",
+    "description": "Stor butik med masser af plads og gode adgangsforhold.",
     "markings": [
-      { "navn": "Parkering", "status": "warning" },
-      { "navn": "Toilet", "status": "danger" },
-      { "navn": "Rampe", "status": "danger" }
+      { "navn": "Rampe", "status": "success" },
+      { "navn": "Dør", "status": "success" },
+      { "navn": "Toilet", "status": "warning" },
+      { "navn": "Plads", "status": "success" },
+      { "navn": "Parkering", "status": "success" }
     ],
-    "markerColor": "marker-warning",
-    "photo_links": ["https://placehold.net/default.png"]
+    "markerColor": "marker-success",
+    "photo_links": ["https://image.folketidende.dk/413349.webp?imageId=413349&cropw=100.00&croph=100.00&width=960&height=548&format=jpg"]
   },
   {
-    "name": "Lidl City",
-    "latlong": [54.768887,11.864483],
-    "rating": "2.5",
-    "description": "Centralt beliggende butik, men med lidt udfordrende adgangsforhold.",
+    "name": "Zealand",
+    "link": "",
+    "latlong": [54.76471988779447, 11.878865717062656],
+    "rating": "4.9",
+    "description": "Hvor kvalitet møder ambition – et af Danmarks bedste studier!",
     "markings": [
+      { "navn": "Rampe", "status": "success" },
+      { "navn": "Dør", "status": "success" },
+      { "navn": "Toilet", "status": "warning" },
+      { "navn": "Plads", "status": "success" },
+      { "navn": "Parkering", "status": "warning" }
+    ],
+    "markerColor": "marker-success",
+    "photo_links": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfpdWDDvdkgb1zGZ9kWa-qL_WdQQIM5uvvoQ&s"]
+  },
+  {
+    "name": "Slikparadiset",
+    "link": "",
+    "latlong": [54.767468242068645, 11.867649334358386],
+    "rating": "1.5",
+    "description": "Lille butik med begrænset plads og begrænset tilgængelighed.",
+    "markings": [
+      { "navn": "Rampe", "status": "danger" },
       { "navn": "Dør", "status": "warning" },
-      { "navn": "Toilet", "status": "warning" }
+      { "navn": "Toilet", "status": "danger" },
+      { "navn": "Plads", "status": "warning" },
+      { "navn": "Parkering", "status": "warning" }
     ],
-    "markerColor": "marker-warning",
-    "photo_links": ["https://placehold.net/default.png"]
+    "markerColor": "marker-danger",
+    "photo_links": ["https://image.folketidende.dk/2823811.webp?imageId=2823811&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"]
   }
 ]

@@ -54,6 +54,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0px -33px 49px -22px rgba(0,0,0,0.48);
 }
 
 .nav-item {
@@ -260,10 +261,15 @@ body {
   padding-left: 5px;
   width: 40px;
   height: auto;
+  transition: 0.2s ease-in-out;
 }
 
 .h-search-bar {
   overflow: hidden;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.2s ease-in-out;
 }
 
 //BTN Hover effekt
@@ -275,6 +281,30 @@ body {
     background-color: #014c94;
     color: white;
   }
+
+//Header breakpoints (sm)
+@include media-breakpoint-up(sm) {
+  .h-search-bar {
+    max-width: 450px;
+  }
+
+  .h-logo {
+    padding-left: 10px;
+    width: 55px;
+    }
+}
+
+//Header breakpoints (md)
+@include media-breakpoint-up(md) {
+  .h-search-bar {
+    max-width: 525px;
+  }
+
+  .h-logo {
+    padding-left: 15px;
+    width: 65px;
+  }
+}
 //--------------- H.HEADER ---------------//
 
 

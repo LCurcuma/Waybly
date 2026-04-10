@@ -9,6 +9,7 @@ require "settings/init.php";
 <!DOCTYPE html>
 <html lang="da">
 <head>
+
     <meta charset="utf-8">
     
     <title>Waybly</title>
@@ -16,13 +17,16 @@ require "settings/init.php";
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
     <meta name="copyright" content="Information om copyright">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Stylesheet -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstraps ikoner -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Favicon: https://favicon.io/favicon-converter/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/logo/favicons/apple-touch-icon.png">
@@ -69,42 +73,56 @@ require "settings/init.php";
 
 <!----------- FILTER SECTION ----------->
 <div class="px-3 pt-4">
-    <div class="mb-4">
-        <div class="h4 fw-bold mb-3">Populære søgninger</div>
-        <div class="d-flex gap-2 overflow-x-auto h-hide-scrollbar pb-2">
 
-            <!-- Rampe filter knap -->
-            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
-                <div class="bi bi-person-wheelchair fs-5"></div>Rampe</div>
+    <div data-aos="fade-up">
+        <div class="mb-4">
+         <div class="h4 fw-bold mb-3">Populære søgninger</div>
+             <div class="d-flex gap-2 overflow-x-auto h-hide-scrollbar pb-2">
 
-            <!-- Toilet filter knap -->
-            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
-                <div class="bi bi-badge-wc-fill fs-5"></div>Toilet</div>
+                <!-- Rampe filter knap -->
+                <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                    <div class="bi bi-person-wheelchair fs-5"></div>Rampe</div>
 
-            <!-- Parkering filter knap -->
-            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
-                <div class="bi bi-p-square-fill fs-5"></div>Parkering</div>
+                <!-- Toilet filter knap -->
+                <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                    <div class="bi bi-badge-wc-fill fs-5"></div>Toilet</div>
 
-            <!-- Dør filter knap -->
-            <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
-                <div class="bi bi-door-open-fill fs-5"></div>Dør</div>
+                <!-- Parkering filter knap -->
+                <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                    <div class="bi bi-p-square-fill fs-5"></div>Parkering</div>
+
+                <!-- Dør filter knap -->
+                <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                    <div class="bi bi-door-open-fill fs-5"></div>Dør</div>
+
+                <!-- Plads filter knap -->
+                <div class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                    <div class="bi bi bi-box-fill fs-5"></div>Plads</div>
+            </div>
         </div>
     </div>
+
 </div>
 <!----------- FILTER SECTION ----------->
 
 
 <!---------------- CARDS --------------->
 <div class="px-3">
-    <div class="mb-4">
-        <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
-        <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="places-container"></div>
+
+    <div data-aos="fade-up">
+        <div class="mb-4">
+            <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
+            <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="places-container"></div>
+        </div>
     </div>
 
-    <div class="mb-5 pb-5">
-        <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
-        <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="reviews-container"></div>
+    <div data-aos="fade-up">
+        <div class="mb-5 pb-5">
+            <div class="h5 fw-bold mb-3">Bedste anmeldelser</div>
+            <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="reviews-container"></div>
+        </div>
     </div>
+
 </div>
 <!---------------- CARDS --------------->
 
@@ -135,9 +153,19 @@ require "settings/init.php";
 
             const data = await response.json();
 
-            // Vis kort begge steder
+            //Vis kortene usorteret i "Steder tæt på dig"
             tegnKort(data, 'places-container');
-            tegnKort(data, 'reviews-container');
+
+            // Lav en kopi af dataen, så vi ikke ødelægger den originale rækkefølge
+            const sorteretData = [...data];
+
+            // 3. Sorter kopien efter rating (højeste tal først)
+            sorteretData.sort(function(a, b) {
+                return parseFloat(b.rating) - parseFloat(a.rating);
+            });
+
+            // 4. Vis de sorterede kort i "Seneste anmeldelser"
+            tegnKort(sorteretData, 'reviews-container');
 
         } catch (error) {
             console.error("Fejl:", error);
@@ -173,6 +201,24 @@ require "settings/init.php";
                 }
             }
 
+            // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+            sted.markings.sort(function(a, b) {
+
+                // Vi definerer en rækkefølge/værdi for hver farve
+                const colorOrder = {
+                    "success": 1,
+                    "warning": 2,
+                    "danger": 3
+                };
+
+                // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
+                const weightA = colorOrder[a.status] || 4;
+                const weightB = colorOrder[b.status] || 4;
+
+                // Sorter laveste tal først
+                return weightA - weightB;
+            });
+
             // tags
             let tags = '';
 
@@ -195,7 +241,9 @@ require "settings/init.php";
 
             // laver cards
             const kort = `
-            <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px;">
+            <div class="h-place-card flex-shrink-0 mb-3"
+                style="width: 260px; ${sted.link ? 'cursor:pointer;' : ''}"
+                onclick="${sted.link ? `window.location.href='${sted.link}'` : ''}">
 
                 <img src="${sted.photo_links[0]}" class="h-card-img">
 
@@ -229,6 +277,14 @@ require "settings/init.php";
     }
 </script>
 <!----------- CARDS JS SCRIPT ---------->
+
+
+<!------------ AOS LIBRARY ------------>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<!------------ AOS LIBRARY ------------>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
