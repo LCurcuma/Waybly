@@ -105,3 +105,19 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 .hidden{
   display: none;
 }
+
+//knapper til detaljer og rapport på kortet
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.link_rapport{
+  padding:5px 10px;
+  background-color: $secondary;
+  color: $white !important;
+  border-radius: 50%;
+}
