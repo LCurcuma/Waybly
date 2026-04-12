@@ -43,10 +43,11 @@ require "settings/init.php";
 </head>
 <body>
 
+<div class="d-none d-lg-block">
 <!--------------- HEADER --------------->
 <div class="container min-vw-100 min-vh-100">
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 px-0 mx-0">
             <!--index.html-->
             <div class="h-container">
                 <div class="h-header px-3 pt-4 pb-4 bg-primary">
@@ -63,17 +64,6 @@ require "settings/init.php";
                         </div>
                     </div>
 
-                    <!-- søgefelt -->
-                    <div class="input-group mb-3 mt-4 rounded-4 h-search-bar">
-                        <div class="input-group-text bg-white border-0"><div class="bi bi-search text-muted"></div></div>
-                        <input type="text" class="form-control border-0 shadow-none" placeholder="Søg på steder!">
-                        <div class="input-group-text bg-white border-0"><div class="bi bi-mic text-muted"></div></div>
-                    </div>
-
-                    <!-- Knap til kort -->
-                    <div class="d-flex mt-4 justify-content-center">
-                        <div class="btn rounded-4 btn-secondary px-5 py-2 fw-semibold text-white">Åben kort</div>
-                    </div>
                 </div>
             </div>
             <!--------------- HEADER --------------->
@@ -110,12 +100,12 @@ require "settings/init.php";
             <div class="px-3">
                 <div class="mb-4">
                     <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
-                    <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="places-container"></div>
+                    <div class="d-flex flex-column gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2" id="places-container_desktop"></div>
                 </div>
 
                 <div class="mb-5 pb-5">
                     <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
-                    <div class="d-flex gap-3 overflow-x-auto h-hide-scrollbar pb-2" id="reviews-container"></div>
+                    <div class="d-flex flex-column gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2" id="reviews-container_desktop"></div>
                 </div>
             </div>
             <!---------------- CARDS --------------->
@@ -126,25 +116,32 @@ require "settings/init.php";
         <!--index.html-->
 
         <!--map.html-->
-        <div class="col-8">
+        <div class="col-8 position-fixed top-0 end-0 px-0 mx-0">
+            <!-- søgefelt -->
+            <div class="input-group mb-3 mt-3 h-search-bar">
+                <div class="input-group-text bg-white border-0"><div class="bi bi-search text-muted"></div></div>
+                <input type="text" class="form-control border-0 shadow-none" placeholder="Søg på steder!">
+                <div class="input-group-text bg-white border-0"><div class="bi bi-mic text-muted"></div></div>
+            </div>
+
             <div id="map"></div>
         </div>
         <!--map.html-->
     </div>
 </div>
-
+</div>
 <!--fra index.html-->
 <!----------- CARDS JS SCRIPT ---------->
 <script>
     // Når siden er klar
-    document.addEventListener('DOMContentLoaded', start);
+    document.addEventListener('DOMContentLoaded', start_desktop);
 
-    function start() {
-        hentData();
+    function start_desktop() {
+        hentData_desktop();
     }
 
     // Hent JSON data
-    async function hentData() {
+    async function hentData_desktop() {
         try {
             const response = await fetch('data/places.json');
 
@@ -156,8 +153,8 @@ require "settings/init.php";
             const data = await response.json();
 
             // Vis kort begge steder
-            tegnKort(data, 'places-container');
-            tegnKort(data, 'reviews-container');
+            tegnKort(data, 'places-container_desktop');
+            tegnKort(data, 'reviews-container_desktop');
 
         } catch (error) {
             console.error("Fejl:", error);
@@ -215,7 +212,7 @@ require "settings/init.php";
 
             // laver cards
             const kort = `
-            <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px;">
+            <div class="h-place-card flex-shrink-0 mb-3" style="width: 100%;">
 
                 <img src="${sted.photo_links[0]}" class="h-card-img">
 
@@ -273,7 +270,7 @@ require "settings/init.php";
             let isClicked = false;
 
 
-            container.innerHTML = `<button class="burger-btn" id="burger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg></button><div id="burger_menu" class="burgerMenu hidden"><a href="index.html">Tilbage</a><a href="">Kontakt</a></div> <button class="burger-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"> <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/></svg></button>`;
+            container.innerHTML = `<button class="burger-btn" id="burger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg></button><div id="burger_menu" class="burgerMenu hidden"><a href="">Kontakt</a></div> <button class="burger-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"> <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/></svg></button>`;
 
             //tilføje funktion for at fjerne eller vise burger menuen
             let burgerMenu = container.querySelector('#burger_menu');
@@ -293,10 +290,10 @@ require "settings/init.php";
     map.addControl(new customControl());
 
     // Når siden er klar
-    document.addEventListener('DOMContentLoaded', hentData);
+    document.addEventListener('DOMContentLoaded', hentData_map);
 
     // Hent JSON data
-    async function hentData() {
+    async function hentData_map() {
         try {
             const response = await fetch('data/places.json');
 

@@ -44,6 +44,8 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
   font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 //--------------- BODY ---------------//
 
@@ -259,6 +261,11 @@ body {
 .h-header {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
+  @include media-breakpoint-up(lg){
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .h-logo {
@@ -274,6 +281,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(mg){
+    box-shadow: 0 9px 28px -3px rgba(0,0,0,0.49);
+    border-radius: 10px;
+  }
 }
 
 //BTN Hover effekt
@@ -324,6 +336,10 @@ body {
     width: 100%;
     height: 140px;
     object-fit: cover;
+
+    @include media-breakpoint-up(lg){
+      height: 200px;
+    }
   }
 
   .h-description-text {
