@@ -1138,10 +1138,10 @@ require "settings/init.php";
             </div>
 
 <script>
-    // Vi pakker alt ind i en EventListener, der venter på at HTML'en er klar
+    // pakker alt ind i en EventListener, der venter på at HTML'en er klar
     document.addEventListener('DOMContentLoaded', function() {
 
-        // --- 1. RAPPORT LOGIK (Popup vs. Side) ---
+        // --- RAPPORT LOGIK (Popup vs. Side) ---
         window.handleReportClick = function(event) {
             if (event) event.preventDefault();
 
@@ -1178,8 +1178,8 @@ require "settings/init.php";
             }
         };
 
-        // --- 2. EMOJI / IKON VALG ---
-        // Vi lytter på dokumentet, så det virker selvom indholdet loades senere
+        // --- EMOJI / IKON VALG ---
+        // lytter på dokumentet, så det virker selvom indholdet loades senere
         document.addEventListener('click', function(e) {
             if (e.target.matches('.icons i')) {
                 const icon = e.target;
@@ -1189,7 +1189,7 @@ require "settings/init.php";
             }
         });
 
-        // --- 3. SUCCESS MODAL AUTO-LUK ---
+        // --- SUCCESS MODAL AUTO-LUK ---
         const successModalEl = document.getElementById('successModal');
         if (successModalEl) {
             successModalEl.addEventListener('shown.bs.modal', function () {
@@ -1203,7 +1203,7 @@ require "settings/init.php";
             });
         }
 
-        // --- 4. SUBMIT RENSNING ---
+        //
         const submitBtn = document.getElementById('submitBtn');
         if (submitBtn) {
             submitBtn.addEventListener('click', function () {
