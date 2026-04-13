@@ -311,7 +311,7 @@ require "settings/init.php";
             });
         }
     </script>
-    <!----------- CARDS JS SCRIPT MOBIL ----------->
+<!----------- CARDS JS SCRIPT MOBIL ----------->
 
 
 </div>
@@ -351,6 +351,8 @@ require "settings/init.php";
                 <div class="px-3 pt-4">
                     <div class="mb-4">
 
+                        <div data-aos="fade-up">
+
                         <div class="h4 fw-bold mb-3">Populære søgninger</div>
                         <div class="d-flex gap-2 overflow-x-auto h-hide-scrollbar pb-2">
 
@@ -379,6 +381,8 @@ require "settings/init.php";
                                 <div class="bi bi bi-box-fill fs-5"></div>Plads
                             </div>
 
+
+                        </div>
                         </div>
 
                     </div>
@@ -388,16 +392,21 @@ require "settings/init.php";
 
                 <!------------- CARDS DESKTOP ------------>
                 <div class="px-3">
+
+                    <div data-aos="fade-up">
                     <div class="mb-4">
                         <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
                         <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                              id="places-container_desktop"></div>
                     </div>
+                    </div>
 
+                    <div data-aos="fade-up">
                     <div class="mb-5 pb-5">
-                        <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
+                        <div class="h5 fw-bold mb-3">Bedste anmeldelser</div>
                         <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                              id="reviews-container_desktop"></div>
+                    </div>
                     </div>
                 </div>
                 <!------------- CARDS DESKTOP ------------>
@@ -566,44 +575,41 @@ require "settings/init.php";
 <div class="col col-8">
 <h2 class="fw-bold text-nowrap overflow-hidden h2_text_popup" style="text-overflow: ellipsis; max-width: 140px;">${place.name}</h2>
 
-                    <div class="small d-flex align-items-center gap-1">
-                        <span>${stjerner}</span>
-                        <span class="fw-bold">${place.rating}</span>
+                                    <div class="small d-flex align-items-center gap-1">
+                                        <span>${stjerner}</span>
+                                        <span class="fw-bold">${place.rating}</span>
+                                    </div>
+
+                                    <div class="h-description-text mt-1 mb-2">
+                                        ${place.description}
+                                    </div>
+
+                                    <div class="d-flex flex-wrap gap-1">
+                                        ${tags}
+                                    </div>
+                                </div>
+                                <div class="col col-4">
+                                    <img src="${place.photo_links[0]}" class="card-image">
+                                </div>
+                            </div>
+                        </div>
+                        ${place.link !== "" ? `
+                        <div class="links">
+                            <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
+                            <a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
+                        </div>
+                        ` : ""}
                     </div>
-                <div class="h-description-text mt-1 mb-2">
-                    ${place.description}
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                    ${tags}
-                </div>
-</div>
-<div class="col col-4">
-            <img src="${place.photo_links[0]}" class="card-image">
-</div>
-</div>
-</div>
-${place.link !== "" ? `
-                    <div class="links">
-                    <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-                    </div>
-` : ""}
-
-</div>
-    `);
-                });
-            } catch (error) {
-                console.error("Fejl:", error);
-            }
-        }
-
-    </script>
-<!-------- MAPS JS SCRIPT DESKTOP ------->
-
-
-<!-------- CARDS JS SCRIPT DESKTOP ------->
-<script>
-    // Når siden er klar
-        document.addEventListener('DOMContentLoaded', start_desktop);
+                `);
+                            });
+                        } catch (error) {
+                            console.error("Fejl:", error);
+                        }
+                    }
+                </script>
+                <script>
+                    // Når siden er klar
+                    document.addEventListener('DOMContentLoaded', start_desktop);
 
         function start_desktop() {
             hentData_desktop();
@@ -963,7 +969,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRapportModal()">
+                    <button class="reportbtn" onclick="openRepportModal()">
                         Rapporter
                     </button>
                 </div>
@@ -993,9 +999,11 @@ ${place.link !== "" ? `
                 }
 
 
+
+
             </script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
