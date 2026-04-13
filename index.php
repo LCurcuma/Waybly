@@ -594,7 +594,6 @@ require "settings/init.php";
 ${place.link !== "" ? `
                     <div class="links">
                     <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-
                     </div>
 ` : ""}
 </div>
@@ -1000,6 +999,12 @@ ${place.link !== "" ? `
                     document.getElementById('detailsModal').style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }
+
+
+
+
+            </script>
+
 
 
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
