@@ -396,7 +396,10 @@ require "settings/init.php";
 </div>
 </div>
 </div>
-<a href="" class="link_detaljer">Se detaljer</a>
+<div class="links">
+<a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
+<a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
+</div>
 </div>
     `);
                 });
