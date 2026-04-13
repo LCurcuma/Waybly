@@ -200,10 +200,12 @@ require "settings/init.php";
 </div>
 </div>
 </div>
-<div class="links">
-<a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-<a href="rapport.php" class="link_rapport" onclick="openRepportModal(event)" >+</a>
-</div>
+${place.link !== "" ? `
+                    <div class="links">
+                    <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
+                    <a href="rapport.php" class="link_rapport" onclick="openRapportModal(event)">+</a>
+                    </div>
+` : ""}
 </div>
     `);
                 });
@@ -395,7 +397,7 @@ require "settings/init.php";
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRepportModal()">
+                    <button class="reportbtn" onclick="openRapportModal()">
                         Rapporter
                     </button>
                 </div>
