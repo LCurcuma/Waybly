@@ -402,7 +402,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openReportModal()">
+                    <button class="reportbtn" onclick="handleReportClick(event)">
                         Rapporter
                     </button>
                 </div>
@@ -562,70 +562,85 @@ ${place.link !== "" ? `
                 </div>
 
                 <script>
-                    // --- POPUP STYRING ---
+                    // Vi pakker alt ind i en EventListener, der venter på at HTML'en er klar
+                    document.addEventListener('DOMContentLoaded', function() {
 
-                    function openReportModal() {
-                        const detailsModal = document.getElementById('detailsModal');
-                        const reportModal = document.getElementById('reportModal');
+                        // --- 1. RAPPORT LOGIK (Popup vs. Side) ---
+                        window.handleReportClick = function(event) {
+                            if (event) event.preventDefault();
 
+                            const reportModal = document.getElementById('reportModal');
+                            const detailsModal = document.getElementById('detailsModal');
 
-                        if (detailsModal) detailsModal.style.display = 'none';
-
-                        if (reportModal) {
-                            if (window.innerWidth >= 1024) {
-                                reportModal.style.display = 'block';
-                                document.body.style.overflow = 'hidden';
+                            if (window.innerWidth < 850) {
+                                // MOBIL: Gå til separat side
+                                window.location.href = 'rapport.php';
                             } else {
-                                window.scrollTo(0, 0);
+                                // DESKTOP: Åbn popup
+                                if (reportModal) {
+                                    reportModal.classList.add('active');
+                                    reportModal.style.display = 'flex'; // Sikrer visning
+                                    document.body.style.overflow = 'hidden';
+
+                                    if (detailsModal) {
+                                        detailsModal.style.display = 'none';
+                                    }
+                                }
                             }
+                        };
+
+                        window.closeReportModal = function() {
+                            const reportModal = document.getElementById('reportModal');
+                            if (window.innerWidth >= 850) {
+                                if (reportModal) {
+                                    reportModal.classList.remove('active');
+                                    reportModal.style.display = 'none';
+                                }
+                                document.body.style.overflow = 'auto';
+                            } else {
+                                window.history.back();
+                            }
+                        };
+
+                        // --- 2. EMOJI / IKON VALG ---
+                        // Vi lytter på dokumentet, så det virker selvom indholdet loades senere
+                        document.addEventListener('click', function(e) {
+                            if (e.target.matches('.icons i')) {
+                                const icon = e.target;
+                                const parent = icon.parentElement;
+                                parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
+                                icon.classList.add('active');
+                            }
+                        });
+
+                        // --- 3. SUCCESS MODAL AUTO-LUK ---
+                        const successModalEl = document.getElementById('successModal');
+                        if (successModalEl) {
+                            successModalEl.addEventListener('shown.bs.modal', function () {
+                                setTimeout(() => {
+                                    const modalInstance = bootstrap.Modal.getInstance(successModalEl);
+                                    if (modalInstance) modalInstance.hide();
+
+                                    // Valgfrit: Luk også selve rapport-popup'en når success er færdig
+                                    closeReportModal();
+                                }, 3000);
+                            });
                         }
-                    }
 
-                    function closeReportModal() {
-                        const reportModal = document.getElementById('reportModal');
-                        if (window.innerWidth >= 1024) {
-                            if (reportModal) reportModal.style.display = 'none';
-                            document.body.style.overflow = 'auto'; // Tillad scroll igen
-                        } else {
-                            window.history.back();
+                        // --- 4. SUBMIT RENSNING ---
+                        const submitBtn = document.getElementById('submitBtn');
+                        if (submitBtn) {
+                            submitBtn.addEventListener('click', function () {
+                                const noteInput = document.getElementById('noteInput');
+                                if (noteInput) noteInput.value = '';
+
+                                document.querySelectorAll('.icons i').forEach(icon => {
+                                    icon.classList.remove('active');
+                                });
+                            });
                         }
-                    }
-
-
-                    document.querySelectorAll('.icons i').forEach(icon => {
-                        icon.addEventListener('click', function () {
-                            let parent = this.parentElement;
-
-                            parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
-                            this.classList.add('active');
-                        });
-                    });
-
-                    var modal = document.getElementById('successModal');
-                    modal.addEventListener('shown.bs.modal', function () {
-                        setTimeout(() => {
-                            bootstrap.Modal.getInstance(modal).hide();
-                        }, 3000);
-                    });
-
-                    document.querySelectorAll('.upload-btn').forEach(btn => {
-                        btn.addEventListener('click', () => {
-                            alert('funktion kommer snart');
-                        });
-                    });
-
-                    document.getElementById('submitBtn').addEventListener('click', function () {
-
-                        // Ryd textarea
-                        document.getElementById('noteInput').value = '';
-
-                        // Fjern valgte emojis (active class)
-                        document.querySelectorAll('.icons i').forEach(icon => {
-                            icon.classList.remove('active');
-                        });
 
                     });
-
                 </script>
 
 
