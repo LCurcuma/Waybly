@@ -575,41 +575,44 @@ require "settings/init.php";
 <div class="col col-8">
 <h2 class="fw-bold text-nowrap overflow-hidden h2_text_popup" style="text-overflow: ellipsis; max-width: 140px;">${place.name}</h2>
 
-                                    <div class="small d-flex align-items-center gap-1">
-                                        <span>${stjerner}</span>
-                                        <span class="fw-bold">${place.rating}</span>
-                                    </div>
-
-                                    <div class="h-description-text mt-1 mb-2">
-                                        ${place.description}
-                                    </div>
-
-                                    <div class="d-flex flex-wrap gap-1">
-                                        ${tags}
-                                    </div>
-                                </div>
-                                <div class="col col-4">
-                                    <img src="${place.photo_links[0]}" class="card-image">
-                                </div>
-                            </div>
-                        </div>
-                        ${place.link !== "" ? `
-                        <div class="links">
-                            <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-                            <a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
-                        </div>
-                        ` : ""}
+                    <div class="small d-flex align-items-center gap-1">
+                        <span>${stjerner}</span>
+                        <span class="fw-bold">${place.rating}</span>
                     </div>
-                `);
-                            });
-                        } catch (error) {
-                            console.error("Fejl:", error);
-                        }
-                    }
-                </script>
-                <script>
-                    // Når siden er klar
-                    document.addEventListener('DOMContentLoaded', start_desktop);
+                <div class="h-description-text mt-1 mb-2">
+                    ${place.description}
+                </div>
+                <div class="d-flex flex-wrap gap-1">
+                    ${tags}
+                </div>
+</div>
+<div class="col col-4">
+            <img src="${place.photo_links[0]}" class="card-image">
+</div>
+</div>
+</div>
+${place.link !== "" ? `
+                    <div class="links">
+                    <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
+
+                    </div>
+` : ""}
+</div>
+    `);
+                });
+            } catch (error) {
+                console.error("Fejl:", error);
+            }
+        }
+
+    </script>
+<!-------- MAPS JS SCRIPT DESKTOP ------->
+
+
+<!-------- CARDS JS SCRIPT DESKTOP ------->
+<script>
+    // Når siden er klar
+        document.addEventListener('DOMContentLoaded', start_desktop);
 
         function start_desktop() {
             hentData_desktop();
@@ -969,7 +972,7 @@ require "settings/init.php";
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRepportModal()">
+                    <button class="reportbtn" onclick="openReportModal()">
                         Rapporter
                     </button>
                 </div>
@@ -999,11 +1002,7 @@ require "settings/init.php";
                 }
 
 
-
-
-            </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
