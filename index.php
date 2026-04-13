@@ -585,7 +585,6 @@ require "settings/init.php";
 ${place.link !== "" ? `
                     <div class="links">
                     <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-                    <a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
                     </div>
 ` : ""}
 
@@ -964,7 +963,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRepportModal()">
+                    <button class="reportbtn" onclick="openRapportModal()">
                         Rapporter
                     </button>
                 </div>
@@ -994,11 +993,9 @@ ${place.link !== "" ? `
                 }
 
 
-
-
             </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
