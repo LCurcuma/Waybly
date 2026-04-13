@@ -78,9 +78,7 @@ require "settings/init.php";
                     <div class="bi bi-search text-muted"></div>
                 </div>
 
-                <label>
                     <input type="text" class="form-control border-0 shadow-none" placeholder="Søg på steder!">
-                </label>
 
                 <div class="input-group-text bg-white border-0">
                     <div class="bi bi-mic text-muted"></div>
