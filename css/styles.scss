@@ -919,6 +919,7 @@ body {
 .statusoverskrift {
   font-size: 17px;
   padding-top: 3px;
+  color: white;
 
   @include media-breakpoint-up(sm) {
     font-size: 18px;
@@ -965,6 +966,7 @@ body {
 .statusicon {
   font-size: 18px;
   padding-top: 6px;
+  color: #f9feff;
 
   @include media-breakpoint-up(sm) {
     font-size: 20px;
