@@ -433,8 +433,7 @@ require "settings/init.php";
 <!---- TABLET-/DESKTOPVERSION AF INDEX.PHP ---->
 
 
-    <!--fra map.html-->
-    <!--KORT-->
+<!-------- MAPS JS SCRIPT DESKTOP ------->
     <script>
         //den laver kort, som viser kort på lokationen, som er 54, 11 med zoom 16
         var map = L.map('map').setView([54.7646137, 11.8709918], 16);
@@ -599,14 +598,12 @@ ${place.link !== "" ? `
         }
 
     </script>
+<!-------- MAPS JS SCRIPT DESKTOP ------->
 
 
-
-
-    <!--SCRIPT FOR DESKTOP VERSION AF APP-->
-    <!----------- CARDS JS SCRIPT ---------->
-    <script>
-        // Når siden er klar
+<!-------- CARDS JS SCRIPT DESKTOP ------->
+<script>
+    // Når siden er klar
         document.addEventListener('DOMContentLoaded', start_desktop);
 
         function start_desktop() {
@@ -764,17 +761,16 @@ ${place.link !== "" ? `
                 container.innerHTML += kort_desktop;
             });
         }
-    </script>
-    <!----------- CARDS JS SCRIPT ---------->
-    <!--fra index.html-->
+</script>
+<!-------- CARDS JS SCRIPT DESKTOP ------->
 
 
-    <!------------ AOS LIBRARY ------------>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <!------------ AOS LIBRARY ------------>
+<!------------ AOS LIBRARY ------------>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<!------------ AOS LIBRARY ------------>
 
 
 
