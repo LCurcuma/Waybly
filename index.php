@@ -893,7 +893,7 @@ require "settings/init.php";
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openReportModal()">
+                    <button class="reportbtn" onclick="openRepportModal()">
                         Rapporter
                     </button>
                 </div>
