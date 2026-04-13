@@ -403,7 +403,7 @@ require "settings/init.php";
 
                     <div data-aos="fade-up">
                     <div class="mb-5 pb-5">
-                        <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
+                        <div class="h5 fw-bold mb-3">Bedste anmeldelser</div>
                         <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                              id="reviews-container_desktop"></div>
                     </div>
