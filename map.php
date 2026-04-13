@@ -402,7 +402,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRapportModal()">
+                    <button class="reportbtn" onclick="openReportModal()">
                         Rapporter
                     </button>
                 </div>
@@ -434,6 +434,199 @@ ${place.link !== "" ? `
         }
 
     </script>
+
+    <div id="reportModal" class="report-container">
+        <div class="report-modal-content">
+            <div class="details">
+
+                <div class="r-header">
+                    <a href="#" class="back-btn d-lg-none" onclick="closeReportModal()">
+                        <i class="bi bi-arrow-left custom-icon"></i>
+                    </a>
+
+                    <span class="detclosemodalbtn d-none d-lg-block" onclick="closeReportModal()">&times;</span>
+
+                    <h1 class="custom-heading">Rapporter</h1>
+                </div>
+
+                <div class="app-wrapper">
+                    <div class="left-column">
+
+                        <div class="location-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="location-info">
+                                    <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
+                                    <div class="rating fw-bold">
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-half" style="color: #00B4D7"></i>
+                                        <span class="score">4.5</span>
+                                    </div>
+                                </div>
+                                <img src="https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp" class="location-img" alt="netto">
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"</h3>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/rampe.png" style="width: 30px" alt="rampe"> Rampe</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/toilet.png" style="width: 30px" alt="toilet"> Toilet</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/dør.png" style="width: 30px" alt="dør"> Dør</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/parkering.png" style="width: 30px" alt="parkering"> Parkering</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/plads.png" style="width: 30px" alt="plads"> Plads</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bemærkninger -->
+                        <div class="section">
+                            <h3><img src="img/checklist/bemærkninger/note.png" style="width: 20px" alt="note"><strong>
+                                    Bemærkninger</strong><span> (valgfri)</span></h3>
+                            <textarea id="noteInput" class="custom-textarea"></textarea>
+                        </div>
+
+                        <!-- Upload -->
+                        <div class="section">
+                            <h3 class="fw-bold custom-h3"><img src="img/checklist/uploade.png" style="width: 20px" alt="upload">
+                                <strong>Upload billede</strong> <span>(valgfri)</span></h3>
+                            <div class="upload-buttons">
+                                <button class="upload-btn">
+                                    <i class="bi bi-camera"></i>
+                                    Tag photo
+                                </button>
+                                <button class="upload-btn">
+                                    <i class="bi bi-upload"></i>
+                                    Upload photo
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <button id="submitBtn" class="submit-btn" data-bs-toggle="modal" data-bs-target="#successModal">Indsend
+                            rapport</button>
+
+                        <div class="modal fade" id="successModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content success-modal text-center">
+
+                                    <div class="success-icon">
+                                        ✓
+                                    </div>
+
+                                    <h2 class="success-title">Tak!</h2>
+                                    <p class="success-text">Din rapport er nu indsendt og modtaget af vores team.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // --- POPUP STYRING ---
+
+                    function openReportModal() {
+                        const detailsModal = document.getElementById('detailsModal');
+                        const reportModal = document.getElementById('reportModal');
+
+
+                        if (detailsModal) detailsModal.style.display = 'none';
+
+                        if (reportModal) {
+                            if (window.innerWidth >= 1024) {
+                                reportModal.style.display = 'block';
+                                document.body.style.overflow = 'hidden';
+                            } else {
+                                window.scrollTo(0, 0);
+                            }
+                        }
+                    }
+
+                    function closeReportModal() {
+                        const reportModal = document.getElementById('reportModal');
+                        if (window.innerWidth >= 1024) {
+                            if (reportModal) reportModal.style.display = 'none';
+                            document.body.style.overflow = 'auto'; // Tillad scroll igen
+                        } else {
+                            window.history.back();
+                        }
+                    }
+
+
+                    document.querySelectorAll('.icons i').forEach(icon => {
+                        icon.addEventListener('click', function () {
+                            let parent = this.parentElement;
+
+                            parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
+                            this.classList.add('active');
+                        });
+                    });
+
+                    var modal = document.getElementById('successModal');
+                    modal.addEventListener('shown.bs.modal', function () {
+                        setTimeout(() => {
+                            bootstrap.Modal.getInstance(modal).hide();
+                        }, 3000);
+                    });
+
+                    document.querySelectorAll('.upload-btn').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            alert('funktion kommer snart');
+                        });
+                    });
+
+                    document.getElementById('submitBtn').addEventListener('click', function () {
+
+                        // Ryd textarea
+                        document.getElementById('noteInput').value = '';
+
+                        // Fjern valgte emojis (active class)
+                        document.querySelectorAll('.icons i').forEach(icon => {
+                            icon.classList.remove('active');
+                        });
+
+                    });
+
+                </script>
 
 
 </body>
