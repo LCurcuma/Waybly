@@ -1349,6 +1349,7 @@ body {
   display: none;
 }
 
+
 @media (min-width: 1024px) {
   .detmodal {
     display: none;
@@ -1363,7 +1364,7 @@ body {
       0,
       0,
       0.7
-    ) !important; /* !important sikrer at den er gennemsigtig */
+    ) !important;
     overflow-x: hidden;
   }
 

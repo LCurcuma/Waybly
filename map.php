@@ -426,8 +426,6 @@ require "settings/init.php";
             document.body.style.overflow = 'auto';
         }
 
-
-
     </script>
 
 
