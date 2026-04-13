@@ -425,30 +425,8 @@ require "settings/init.php";
             document.getElementById('detailsModal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
-        const statusBoxes = document.querySelectorAll('.statusbox');
 
 
-        //kører et loop, der går igennem hver enkelt boks i listen én efter én.
-        statusBoxes.forEach(function (box) {
-            box.addEventListener('click', function (event) { //beder hver boks "lytte" efter et klik fra brugeren.
-                event.stopPropagation(); //stopper klikket her, så det ikke går videre til window-lytteren (nr. 117).
-
-                const popup = box.querySelector('.statuspopup'); // Finder den popup der ligger lige præcis indeni denne boks
-
-                document.querySelectorAll('.statuspopup').forEach(p => { //finder ALLE popupper på hele siden og løber dem igennem.
-                    if (p !== popup) p.classList.remove('active'); //Hvis popuppen 'p' IKKE er den, vi lige har klikket på, så skal den lukkes (fjern 'active').
-                });
-                if (popup) { //Hvis den rent faktisk fandt en popup i denne boks
-                    popup.classList.toggle('active'); //så tænd den hvis den er slukket, og sluk den hvis den er tændt (toggle 'active').
-                }
-            });
-        });
-
-        window.addEventListener('click', function () { //beder hele vinduet (skærmen) om at lytte efter klik.
-            document.querySelectorAll('.statuspopup').forEach(p => { //Hvis der bliver klikket et tilfældigt sted, finder vi alle popupper
-                p.classList.remove('active'); //og fjerner 'active' klassen fra dem alle, så de forsvinder.
-            });
-        });
 
     </script>
 
