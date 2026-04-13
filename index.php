@@ -1046,7 +1046,7 @@ require "settings/init.php";
                     </div>
 
                     <div class="section">
-                        <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"</h3>
+                        <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"> Checkliste</h3>
 
                         <div class="check-item">
                             <span><img src="img/checklist/rampe.png" style="width: 30px" alt="rampe"> Rampe</span>
@@ -1202,6 +1202,12 @@ require "settings/init.php";
                 }, 3000);
             });
         }
+
+        document.querySelectorAll('.upload-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('funktion kommer snart');
+            });
+        });
 
         //
         const submitBtn = document.getElementById('submitBtn');
