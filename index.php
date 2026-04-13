@@ -454,15 +454,15 @@ require "settings/init.php";
 
     <!-------- MAPS JS SCRIPT DESKTOP ------->
     <script>
-        //den laver kort, som viser kort på lokationen, som er 54, 11 med zoom 16
+        // den laver kort, som viser kort på lokationen, som er 54, 11 med zoom 16
         var map = L.map('map').setView([54.7646137, 11.8709918], 16);
 
-        //den tage kortet fra nettet. Uden det vises kortet ikke
+        // den tage kortet fra nettet. Uden det vises kortet ikke
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        //tilføje container med burger menu og hjerte knapper
+        // tilføje container med burger menu og hjerte knapper
         var customControl = L.Control.extend({
             options: {
                 position: 'topright'
@@ -472,16 +472,31 @@ require "settings/init.php";
                 var container = L.DomUtil.create('div', 'btn-cont');
                 let isClicked = false;
 
+                container.innerHTML = `
+                <button class="burger-btn" id="burger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
 
-                container.innerHTML = `<button class="burger-btn" id="burger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg></button><div id="burger_menu" class="burgerMenu hidden"><a href="">Kontakt</a></div> <button class="burger-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"> <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/></svg></button>`;
+                <div id="burger_menu" class="burgerMenu hidden">
+                    <a href="">Kontakt</a>
+                </div>
 
-                //tilføje funktion for at fjerne eller vise burger menuen
+                <button class="burger-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                </button>
+            `;
+
+                // tilføje funktion for at fjerne eller vise burger menuen
                 let burgerMenu = container.querySelector('#burger_menu');
                 let burgerButton = container.querySelector('#burger');
 
                 burgerButton.addEventListener('click', () => {
                     burgerMenu.classList.toggle('hidden');
-                })
+                });
 
                 // Prevent map from capturing clicks
                 L.DomEvent.disableClickPropagation(container);
@@ -523,21 +538,17 @@ require "settings/init.php";
                         }
                     }
 
-                    // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+                    // Sorter markings
                     place.markings.sort(function (a, b) {
-
-                        // Vi definerer en rækkefølge/værdi for hver farve
                         const colorOrder = {
                             "success": 1,
                             "warning": 2,
                             "danger": 3
                         };
 
-                        // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
                         const weightA = colorOrder[a.status] || 4;
                         const weightB = colorOrder[b.status] || 4;
 
-                        // Sorter laveste tal først
                         return weightA - weightB;
                     });
 
@@ -545,7 +556,6 @@ require "settings/init.php";
                     let tags = '';
 
                     place.markings.forEach(function (m) {
-
                         let tekstFarve;
 
                         if (m.status === "warning") {
@@ -555,65 +565,77 @@ require "settings/init.php";
                         }
 
                         tags += `
-            <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
-                ${m.navn}
-            </div>
-        `;
+                        <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
+                            ${m.navn}
+                        </div>
+                    `;
                     });
 
-                    //Custom marker
-
+                    // Custom marker
                     const customIcon = L.divIcon({
                         className: 'custom-marker',
                         html: `
-        <svg xmlns=http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class=${place.markerColor} viewBox="0 0 16 16">
-          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-        </svg>
-    `,
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="${place.markerColor}" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                        </svg>
+                    `,
                         iconSize: [30, 30],
-                        iconAnchor: [15, 30] // bottom center
+                        iconAnchor: [15, 30]
                     });
 
                     // Laver marker
                     const marker = L.marker(place.latlong, { icon: customIcon }).addTo(map);
 
-                    //Laver popup
+                    // Laver popup
                     marker.bindPopup(`
-<div class="d-flex flex-column align-items-center justify-content-center gap-3">
-<div class="container">
-<div class="row justify-content-center align-items-center">
-<div class="col col-8">
-<h2 class="fw-bold text-nowrap overflow-hidden h2_text_popup" style="text-overflow: ellipsis; max-width: 140px;">${place.name}</h2>
+                    <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
 
-                    <div class="small d-flex align-items-center gap-1">
-                        <span>${stjerner}</span>
-                        <span class="fw-bold">${place.rating}</span>
+                                <div class="col col-8">
+                                    <h2
+                                        class="fw-bold text-nowrap overflow-hidden h2_text_popup"
+                                        style="text-overflow: ellipsis; max-width: 140px;"
+                                    >
+                                        ${place.name}
+                                    </h2>
+
+                                    <div class="small d-flex align-items-center gap-1">
+                                        <span>${stjerner}</span>
+                                        <span class="fw-bold">${place.rating}</span>
+                                    </div>
+
+                                    <div class="h-description-text mt-1 mb-2">
+                                        ${place.description}
+                                    </div>
+
+                                    <div class="d-flex flex-wrap gap-1">
+                                        ${tags}
+                                    </div>
+                                </div>
+
+                                <div class="col col-4">
+                                    <img src="${place.photo_links[0]}" class="card-image">
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                <div class="h-description-text mt-1 mb-2">
-                    ${place.description}
-                </div>
-                <div class="d-flex flex-wrap gap-1">
-                    ${tags}
-                </div>
-</div>
-<div class="col col-4">
-            <img src="${place.photo_links[0]}" class="card-image">
-</div>
-</div>
-</div>
-${place.link !== "" ? `
-                    <div class="links">
-                    <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-                    </div>
-` : ""}
-</div>
-    `);
+
+                    ${place.link !== "" ? `
+                        <div class="links">
+                            <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">
+                                Se detaljer
+                            </a>
+                        </div>
+                    ` : ""}
+                `);
                 });
+
             } catch (error) {
                 console.error("Fejl:", error);
             }
         }
-
     </script>
     <!-------- MAPS JS SCRIPT DESKTOP ------->
 
@@ -642,17 +664,16 @@ ${place.link !== "" ? `
                 // Vis kort begge steder
                 tegnKort_desktop(data, 'places-container_desktop');
 
-                // Lav en kopi af dataen, så vi ikke ødelægger den originale rækkefølge
+                // Lav en kopi af dataen
                 const sorteretData_desktop = [...data];
 
-                // 3. Sorter kopien efter rating (højeste tal først)
+                // Sorter efter rating
                 sorteretData_desktop.sort(function (a, b) {
                     return parseFloat(b.rating) - parseFloat(a.rating);
                 });
 
-                // 4. Vis de sorterede kort i "Seneste anmeldelser"
+                // Vis de sorterede kort
                 tegnKort_desktop(sorteretData_desktop, 'reviews-container_desktop');
-
 
             } catch (error) {
                 console.error("Fejl:", error);
@@ -660,7 +681,6 @@ ${place.link !== "" ? `
         }
 
         // Lav kortene
-        // Lav kortene (Desktop)
         function tegnKort_desktop(liste, containerId) {
 
             const container = document.getElementById(containerId);
@@ -689,21 +709,18 @@ ${place.link !== "" ? `
                     }
                 }
 
-                // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+                // Sorter markings
                 sted.markings.sort(function (a, b) {
 
-                    // Vi definerer en rækkefølge/værdi for hver farve
                     const colorOrder = {
                         "success": 1,
                         "warning": 2,
                         "danger": 3
                     };
 
-                    // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
                     const weightA = colorOrder[a.status] || 4;
                     const weightB = colorOrder[b.status] || 4;
 
-                    // Sorter laveste tal først
                     return weightA - weightB;
                 });
 
@@ -721,58 +738,55 @@ ${place.link !== "" ? `
                     }
 
                     tags += `
-            <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
-                ${m.navn}
-            </div>
-        `;
+                    <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
+                        ${m.navn}
+                    </div>
+                `;
                 });
 
-
-                // Gør så "netto" cardet i desktop åbner leylas popup istedet for details.php
+                // Click behavior
                 let onClickAction = "";
                 let cursorStyle = "";
 
                 if (sted.name.toLowerCase() === "netto") {
-                    // Åbn modal, hvis stedet er Netto
                     onClickAction = "document.getElementById('detailsModal').style.display='block'";
                     cursorStyle = "cursor:pointer;";
                 } else if (sted.link) {
-                    // Gå til linket, hvis det er alle andre steder
                     onClickAction = `window.location.href='${sted.link}'`;
                     cursorStyle = "cursor:pointer;";
                 }
 
-
                 // laver cards
                 const kort_desktop = `
-        <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px; ${cursorStyle}"
-            onclick="${onClickAction}">
+                <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px; ${cursorStyle}"
+                    onclick="${onClickAction}">
 
-            <img src="${sted.photo_links[0]}" class="h-card-img">
+                    <img src="${sted.photo_links[0]}" class="h-card-img">
 
-            <div class="p-3">
+                    <div class="p-3">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="fw-bold text-nowrap overflow-hidden" style="text-overflow: ellipsis; max-width: 140px;">
-                        ${sted.name}
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="fw-bold text-nowrap overflow-hidden" style="text-overflow: ellipsis; max-width: 140px;">
+                                ${sted.name}
+                            </div>
+
+                            <div class="small d-flex align-items-center gap-1">
+                                <span>${stjerner}</span>
+                                <span class="fw-bold">${sted.rating}</span>
+                            </div>
+                        </div>
+
+                        <div class="h-description-text mt-1 mb-2">
+                            ${sted.description}
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-1">
+                            ${tags}
+                        </div>
+
                     </div>
-
-                    <div class="small d-flex align-items-center gap-1">
-                        <span>${stjerner}</span>
-                        <span class="fw-bold">${sted.rating}</span>
-                    </div>
                 </div>
-
-                <div class="h-description-text mt-1 mb-2">
-                    ${sted.description}
-                </div>
-
-                <div class="d-flex flex-wrap gap-1">
-                    ${tags}
-                </div>
-            </div>
-        </div>
-    `;
+            `;
 
                 // Tilføj til siden
                 container.innerHTML += kort_desktop;
