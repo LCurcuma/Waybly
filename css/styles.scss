@@ -765,22 +765,24 @@ body {
 //---------STYLING RAPPORT MODAL------//
 
 .report-container {
-  display: none !important;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
   background: #f4f6f8;
 
-  @include media-breakpoint-up(mg){
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-
     &.active{
-      display: flex;
+      display: block;
       align-items: center;
       justify-content: center;
+
+      @include media-breakpoint-up(mg){
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
   }
 }
@@ -788,6 +790,15 @@ body {
 .report-modal-content {
   width: 100%;
   min-height: 100vh;
+
+  @include media-breakpoint-up(mg){
+    margin: 0;
+    width: 500px !important;
+    min-height: auto;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Desktop Popup Layout */
@@ -838,6 +849,7 @@ body {
   #reportModal .r-header {
     border-radius: 15px 15px 0 0;
     position: relative;
+    padding-bottom: 40px;
   }
 
   #reportModal .submit-btn {
