@@ -711,7 +711,7 @@ ${place.link !== "" ? `
 
                 // laver cards
                 const kort_desktop = `
-        <div class="h-place-card flex-shrink-0 mb-3" style="width: 100%; ${cursorStyle}"
+        <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px; ${cursorStyle}"
             onclick="${onClickAction}">
 
             <img src="${sted.photo_links[0]}" class="h-card-img">
