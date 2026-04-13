@@ -23,6 +23,8 @@ require "settings/init.php";
     <!-- Stylesheet -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="css/map_styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Font Awesome ikoner -->
     <script src="https://kit.fontawesome.com/737b386bab.js" crossorigin="anonymous"></script>
 
     <!-- Bootstraps ikoner -->

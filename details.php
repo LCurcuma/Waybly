@@ -1,3 +1,10 @@
+<?php
+/**
+ * @var db $db
+ */
+
+require "settings/init.php";
+?>
 <!DOCTYPE html>
 <html lang="da">
 

@@ -428,8 +428,6 @@ ${place.link !== "" ? `
             document.body.style.overflow = 'auto';
         }
 
-
-
     </script>
 
 
