@@ -1202,6 +1202,18 @@ require "settings/init.php";
 
     });
 
+    function handleReportClick(event) {
+
+        if (window.innerWidth < 850) {
+            // MOBIL: Gå til den separate side
+            window.location.href = 'rapport.php';
+        } else {
+
+            event.preventDefault(); // Stop siden fra at skifte
+            document.getElementById('reportModal').style.display = 'block';
+        }
+    }
+
 </script>
 
             <script>
