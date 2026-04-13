@@ -13,7 +13,9 @@
       { "navn": "Parkering", "status": "success" }
     ],
     "markerColor": "marker-success",
-    "photo_links": ["https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"],
+    "photo_links": [
+      "https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"
+    ],
     "comments": [
       {
         "username": "Mette Sørensen",
@@ -40,7 +42,9 @@
       { "navn": "Toilet", "status": "danger" }
     ],
     "markerColor": "marker-warning",
-    "photo_links": ["https://tidstil.dk/wp-content/uploads/2025/08/20250821_164118-1024x1024.jpg"]
+    "photo_links": [
+      "https://tidstil.dk/wp-content/uploads/2025/08/20250821_164118-1024x1024.jpg"
+    ]
   },
   {
     "name": "Duomo",
@@ -56,7 +60,9 @@
       { "navn": "Parkering", "status": "success" }
     ],
     "markerColor": "marker-success",
-    "photo_links": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrFMVODpmXwfCXdeg5You6r3d2jgBn6MoNw&s"]
+    "photo_links": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrFMVODpmXwfCXdeg5You6r3d2jgBn6MoNw&s"
+    ]
   },
   {
     "name": "Rema 1000",
@@ -72,7 +78,9 @@
       { "navn": "Parkering", "status": "success" }
     ],
     "markerColor": "marker-success",
-    "photo_links": ["https://image.folketidende.dk/413349.webp?imageId=413349&cropw=100.00&croph=100.00&width=960&height=548&format=jpg"]
+    "photo_links": [
+      "https://image.folketidende.dk/413349.webp?imageId=413349&cropw=100.00&croph=100.00&width=960&height=548&format=jpg"
+    ]
   },
   {
     "name": "Zealand",
@@ -88,7 +96,9 @@
       { "navn": "Parkering", "status": "warning" }
     ],
     "markerColor": "marker-success",
-    "photo_links": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfpdWDDvdkgb1zGZ9kWa-qL_WdQQIM5uvvoQ&s"]
+    "photo_links": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfpdWDDvdkgb1zGZ9kWa-qL_WdQQIM5uvvoQ&s"
+    ]
   },
   {
     "name": "Slikparadiset",
@@ -104,6 +114,8 @@
       { "navn": "Parkering", "status": "warning" }
     ],
     "markerColor": "marker-danger",
-    "photo_links": ["https://image.folketidende.dk/2823811.webp?imageId=2823811&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"]
+    "photo_links": [
+      "https://image.folketidende.dk/2823811.webp?imageId=2823811&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp"
+    ]
   }
 ]

@@ -3,23 +3,23 @@
 
 //Bootstrap breakpoints, men custom breakpoint
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        mg: 850px,
-        lg: 992px,
-        xl: 1200px,
-        xxl: 1400px,
-        xxxl: 1950px,
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  mg: 850px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1950px,
 );
 
 // 2. Include any default variable overrides here
 $link-decoration: none;
 $black: #121212;
-$white: #F9FEFF;
+$white: #f9feff;
 
-$primary: #01085E;
-$secondary: #0078B7;
+$primary: #01085e;
+$secondary: #0078b7;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -27,7 +27,7 @@ $secondary: #0078B7;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-        "farve": $cyan-400,
+  "farve": $cyan-400,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -37,26 +37,26 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // 5. Du kan lave styling her...
 
 //--------------- KORT ---------------
-#map{
+#map {
   height: 100vh;
   width: 100%;
 }
 
 //Tilbage knap
-.back-btn{
+.back-btn {
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
   cursor: pointer;
 }
 
-.btn-cont{
+.btn-cont {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.burger-btn{
+.burger-btn {
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
@@ -64,36 +64,36 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   border: none;
 }
 
-.card-image{
+.card-image {
   width: 100%;
 }
 
-.h2_text_popup{
+.h2_text_popup {
   font-size: 0.9rem;
 }
 
-.link_detaljer{
-  padding:5px 25px;
+.link_detaljer {
+  padding: 5px 25px;
   background-color: $secondary;
   color: $white !important;
   border-radius: 10px;
 }
 
 //markers
-.marker-warning{
+.marker-warning {
   color: $warning;
 }
 
-.marker-success{
+.marker-success {
   color: $success;
 }
 
-.marker-danger{
+.marker-danger {
   color: $danger;
 }
 
 //burger menu
-.burgerMenu{
+.burgerMenu {
   background-color: white;
   padding: 10px;
   display: flex;
@@ -102,6 +102,22 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   border-radius: 10px;
 }
 
-.hidden{
+.hidden {
   display: none;
+}
+
+//knapper til detaljer og rapport på kortet
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.link_rapport {
+  padding: 5px 10px;
+  background-color: $secondary;
+  color: $white !important;
+  border-radius: 50%;
 }

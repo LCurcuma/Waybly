@@ -3,26 +3,26 @@
 
 //Bootstrap breakpoints, men custom breakpoint
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        mg: 850px,
-        lg: 992px,
-        xl: 1200px,
-        xxl: 1400px,
-        xxxl: 1950px,
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  mg: 850px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1950px,
 );
 
 // 2. Include any default variable overrides here
 $link-decoration: none;
 $black: #121212;
-$white: #F9FEFF;
+$white: #f9feff;
 
-$primary: #01085E;
-$secondary: #0078B7;
+$primary: #01085e;
+$secondary: #0078b7;
 
-$danger: #DC3545;
-$warning: #FFC107;
+$danger: #dc3545;
+$warning: #ffc107;
 $success: #198754;
 
 // 3. Include remainder of required Bootstrap stylesheets
@@ -31,7 +31,7 @@ $success: #198754;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-        "farve": $cyan-400,
+  "farve": $cyan-400,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -42,11 +42,12 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 //--------------- BODY ---------------//
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 //--------------- BODY ---------------//
-
 
 //--------------- NAVBAR ---------------//
 .navbar {
@@ -58,7 +59,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0px -33px 49px -22px rgba(0,0,0,0.48);
+  box-shadow: 0px -33px 49px -22px rgba(0, 0, 0, 0.48);
 }
 
 .nav-item {
@@ -95,7 +96,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 
   @include media-breakpoint-up(md) {
     width: 83px;
@@ -148,7 +148,7 @@ body {
   }
 }
 
-.modal-dialog{
+.modal-dialog {
   margin-left: 40px;
   margin-right: 40px;
   display: flex;
@@ -175,38 +175,39 @@ body {
   }
 }
 
-.custom-modal{
+.custom-modal {
   border-radius: 20px;
   border: none;
   background: $white;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   width: 100%;
   z-index: 9999;
 
-  .modal-header{
+  .modal-header {
     display: flex;
     justify-content: flex-end;
     padding: 15px 15px 0 0;
   }
 
-  .btn-close{
+  .btn-close {
     background-color: transparent;
-    filter:invert(7%) sepia(87%) saturate(2855%) hue-rotate(213deg) brightness(91%) contrast(106%);
+    filter: invert(7%) sepia(87%) saturate(2855%) hue-rotate(213deg)
+      brightness(91%) contrast(106%);
     border-radius: 50%;
     opacity: 1;
     margin: 15px 15px 0 0;
 
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
   }
 }
 
-.kontaktmodaltekst{
+.kontaktmodaltekst {
   font-size: 16px;
 
   @include media-breakpoint-up(sm) {
-   font-size: 18px;
+    font-size: 18px;
   }
 
   @include media-breakpoint-up(md) {
@@ -222,7 +223,7 @@ body {
   }
 }
 
-.kontaktmodalicon{
+.kontaktmodalicon {
   font-size: 20px;
 
   @include media-breakpoint-up(sm) {
@@ -243,7 +244,6 @@ body {
 }
 //--------------- NAVBAR ---------------//
 
-
 //--------------- H.CONTAINER ---------------//
 .h-container {
   width: 100%;
@@ -254,11 +254,15 @@ body {
 }
 //--------------- H.CONTAINER ---------------//
 
-
 //--------------- H.HEADER ---------------//
 .h-header {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
+  @include media-breakpoint-up(lg) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .h-logo {
@@ -274,6 +278,11 @@ body {
   margin-left: auto;
   margin-right: auto;
   transition: 0.2s ease-in-out;
+
+  @include media-breakpoint-up(mg) {
+    box-shadow: 0 9px 28px -3px rgba(0, 0, 0, 0.49);
+    border-radius: 10px;
+  }
 }
 
 //BTN Hover effekt
@@ -281,10 +290,10 @@ body {
   transition-duration: 0.4s;
 }
 
-  .h-btn:hover {
-    background-color: #014c94;
-    color: white;
-  }
+.h-btn:hover {
+  background-color: #014c94;
+  color: white;
+}
 
 //Header breakpoints (sm)
 @include media-breakpoint-up(sm) {
@@ -295,7 +304,7 @@ body {
   .h-logo {
     padding-left: 10px;
     width: 55px;
-    }
+  }
 }
 
 //Header breakpoints (md)
@@ -324,6 +333,10 @@ body {
     width: 100%;
     height: 140px;
     object-fit: cover;
+
+    @include media-breakpoint-up(lg) {
+      height: 200px;
+    }
   }
 
   .h-description-text {
@@ -342,7 +355,7 @@ body {
 
 //---------------Rapport--------------//
 
-.page-rapport{
+.page-rapport {
   background-color: $white;
 }
 
@@ -350,24 +363,23 @@ body {
   max-width: 420px;
   margin: 0 auto;
   padding: 16px;
-  background: #F4F6F8;
+  background: #f4f6f8;
   min-height: 100vh;
 
-  @include media-breakpoint-up(sm){
+  @include media-breakpoint-up(sm) {
     max-width: 576px;
   }
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     max-width: 768px;
     padding: 20px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     max-width: 850px;
     padding: 24px;
   }
 }
-
 
 .r-header {
   display: flex;
@@ -377,11 +389,11 @@ body {
   color: white;
   padding: 20px 16px 60px 16px;
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     padding: 30px 24px 80px 24px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     padding: 40px 28px 90px 28px;
   }
 }
@@ -393,20 +405,20 @@ body {
   display: flex;
   align-items: center;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     font-size: 24px;
   }
 }
 
-.custom-heading{
+.custom-heading {
   font-size: 20px;
   margin: 0;
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     font-size: 24px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     font-size: 28px;
   }
 }
@@ -414,24 +426,23 @@ body {
 .custom-icon {
   font-size: 20px;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     font-size: 24px;
   }
 }
-
 
 .location-card {
   background: white;
   border-radius: 16px;
   padding: 12px 14px;
   margin-top: -40px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     padding: 16px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     padding: 20px;
     border-radius: 20px;
   }
@@ -440,11 +451,11 @@ body {
     font-size: 16px;
     margin: 0;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
       font-size: 20px;
     }
 
-    @include media-breakpoint-up(mg){
+    @include media-breakpoint-up(mg) {
       font-size: 24px;
     }
   }
@@ -455,11 +466,11 @@ body {
     gap: 6px;
     font-size: 14px;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
       font-size: 16px;
     }
 
-    @include media-breakpoint-up(mg){
+    @include media-breakpoint-up(mg) {
       font-size: 20px;
     }
   }
@@ -474,12 +485,12 @@ body {
     border-radius: 10px;
     object-fit: cover;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
       width: 70px;
       height: 70px;
     }
 
-    @include media-breakpoint-up(mg){
+    @include media-breakpoint-up(mg) {
       width: 80px;
       height: 80px;
     }
@@ -489,7 +500,7 @@ body {
 .section {
   margin-top: 20px;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     margin-top: 28px;
   }
 
@@ -497,11 +508,11 @@ body {
     font-size: 18px;
     margin-bottom: 10px;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
       font-size: 20px;
     }
 
-    @include media-breakpoint-up(mg){
+    @include media-breakpoint-up(mg) {
       font-size: 22px;
     }
 
@@ -513,7 +524,6 @@ body {
   }
 }
 
-
 .check-item {
   background: $white;
   border-radius: 12px;
@@ -523,14 +533,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     padding: 14px 16px;
     font-size: 20px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     padding: 18px 20px;
     border-radius: 16px;
     font-size: 24px;
@@ -546,13 +556,13 @@ body {
     justify-content: center;
     color: white;
 
-    @include media-breakpoint-up(md){
+    @include media-breakpoint-up(md) {
       width: 58px;
       height: 58px;
       font-size: 35px;
     }
 
-    @include media-breakpoint-up(mg){
+    @include media-breakpoint-up(mg) {
       width: 65px;
       height: 65px;
       font-size: 40px;
@@ -563,13 +573,18 @@ body {
     background: currentColor;
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
-  .happy {background:$success;}
-  .neutral {background: $warning;}
-  .sad {background: $danger;}
-
+  .happy {
+    background: $success;
+  }
+  .neutral {
+    background: $warning;
+  }
+  .sad {
+    background: $danger;
+  }
 }
 
 .custom-textarea {
@@ -580,20 +595,19 @@ body {
   padding: 10px;
   background: $white;
   resize: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     height: 140px;
     padding: 14px;
   }
 }
 
-
 .upload-buttons {
   display: flex;
   gap: 10px;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     gap: 14px;
   }
 }
@@ -609,24 +623,23 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   font-size: 12px;
   opacity: 0.7;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     padding: 14px;
     font-size: 14px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     padding: 18px;
     font-size: 14px;
   }
 }
 
-
-.upload-btn i{
+.upload-btn i {
   background: $secondary;
   color: $white;
   font-size: 18px;
@@ -638,8 +651,7 @@ body {
   justify-content: center;
   margin-bottom: 6px;
 
-
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     width: 44px;
     height: 44px;
     font-size: 20px;
@@ -658,19 +670,19 @@ body {
   font-weight: 600;
   font-size: 16px;
   margin-left: 60px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 
-  @include media-breakpoint-up(sm){
+  @include media-breakpoint-up(sm) {
     margin-left: 80px;
   }
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     width: 60%;
     height: 52px;
     margin-left: 140px;
   }
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     width: 50%;
     height: 56px;
     font-size: 18px;
@@ -683,7 +695,7 @@ body {
   padding: 30px 20px;
   border: none;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     padding: 40px 30px;
   }
 }
@@ -692,7 +704,7 @@ body {
 .success-icon {
   width: 70px;
   height: 70px;
-  background: #2ECC71;
+  background: #2ecc71;
   color: white;
 
   border-radius: 50%;
@@ -704,7 +716,7 @@ body {
 
   margin: 0 auto 15px auto;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     width: 90px;
     height: 90px;
     font-size: 40px;
@@ -718,7 +730,7 @@ body {
   color: #000;
   margin-bottom: 8px;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     font-size: 24px;
   }
 }
@@ -729,21 +741,19 @@ body {
   color: #6c757d;
   margin: 0;
 
-  @include media-breakpoint-up(mg){
+  @include media-breakpoint-up(mg) {
     font-size: 16px;
   }
 }
 
 //---------------Rapport--------------//
 
-
 //--------------- DETAILS SIDE - HEADER ---------------//
-.headerimg{
+.headerimg {
   min-height: 250px;
   background-size: cover;
   position: relative;
   object-fit: cover;
-
 
   @include media-breakpoint-up(md) {
     height: 270px;
@@ -754,7 +764,7 @@ body {
   }
 }
 
-.backbtn{
+.backbtn {
   border: none;
   background-color: transparent;
   font-size: 28px;
@@ -771,30 +781,26 @@ body {
   @include media-breakpoint-up(mg) {
     font-size: 36px;
   }
-
-
 }
 //--------------- HEADER ---------------//
 
-
-
 //--------------- INFO BIO ---------------//
 
-.details{
+.details {
   position: relative;
   width: 100%;
 }
 
-.infobio{
+.infobio {
   background: $white;
   margin: -50px 15px 26px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
-.overskriftbio{
+.overskriftbio {
   font-size: 24px;
   margin-bottom: 2px;
   font-weight: bolder;
@@ -817,7 +823,7 @@ body {
   }
 }
 
-.stjernerbio{
+.stjernerbio {
   font-size: 18px;
 
   @include media-breakpoint-up(sm) {
@@ -833,7 +839,7 @@ body {
   }
 }
 
-.tekstbio{
+.tekstbio {
   margin-bottom: 0;
   margin-top: 6px;
   font-size: 15px;
@@ -856,11 +862,9 @@ body {
 }
 //--------------- INFO BIO ---------------//
 
-
-
 //--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
 
-.overskrifttilgænge{
+.overskrifttilgænge {
   font-size: 22px;
   margin-left: 33px;
   font-weight: bold;
@@ -881,10 +885,9 @@ body {
   @include media-breakpoint-up(lg) {
     font-size: 22px;
   }
-
 }
 
-.tilgængelighedicon{
+.tilgængelighedicon {
   font-size: 23px;
 
   @include media-breakpoint-up(sm) {
@@ -904,7 +907,7 @@ body {
   }
 }
 
-.statustilgængelighedbokse{
+.statustilgængelighedbokse {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -913,7 +916,7 @@ body {
   margin-left: 22px;
 }
 
-.statusoverskrift{
+.statusoverskrift {
   font-size: 17px;
   padding-top: 3px;
 
@@ -934,8 +937,7 @@ body {
   }
 }
 
-
-.statusiconsvg{
+.statusiconsvg {
   height: 23px;
   width: 23px;
 
@@ -960,7 +962,7 @@ body {
   }
 }
 
-.statusicon{
+.statusicon {
   font-size: 18px;
   padding-top: 6px;
 
@@ -1012,7 +1014,7 @@ body {
   color: #333;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   z-index: 1000000;
   font-weight: normal;
   font-size: 15px;
@@ -1040,10 +1042,9 @@ body {
 
 //--------------- STATUS BOKSE FOR TILGÆNGELIGHED ---------------//
 
-
 //--------------- KOMMENTARSEKTION ---------------//
 
-.kommentarer{
+.kommentarer {
   margin-top: 43px;
 }
 
@@ -1088,14 +1089,13 @@ body {
   @include media-breakpoint-up(lg) {
     font-size: 23px;
   }
-
 }
 
 .kommentarboks {
   padding-left: 30px;
   padding-right: 30px;
   overflow-y: auto;
-  background-color: #F9FEFF;
+  background-color: #f9feff;
   padding-top: 20px;
 }
 
@@ -1197,7 +1197,7 @@ body {
 
 .stjernerkom {
   margin-left: auto;
-  color: #00B4D7;
+  color: #00b4d7;
   font-size: 18px;
 
   @include media-breakpoint-up(sm) {
@@ -1246,7 +1246,7 @@ body {
   }
 }
 
-.statuscheck2{
+.statuscheck2 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1275,7 +1275,7 @@ body {
   }
 }
 
-.statuscheck3{
+.statuscheck3 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1284,7 +1284,7 @@ body {
   margin-bottom: 10px;
 }
 
-.i3{
+.i3 {
   font-size: 24px;
 
   @include media-breakpoint-up(sm) {
@@ -1304,7 +1304,7 @@ body {
   }
 }
 
-.statuschecktekst{
+.statuschecktekst {
   font-size: 17px;
 
   @include media-breakpoint-up(sm) {
@@ -1352,7 +1352,6 @@ body {
   display: none;
 }
 
-
 @media (min-width: 1024px) {
   .detmodal {
     display: none;
@@ -1362,15 +1361,20 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7) !important; /* !important sikrer at den er gennemsigtig */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ) !important; /* !important sikrer at den er gennemsigtig */
     overflow-x: hidden;
   }
 
-  .details{
+  .details {
     width: 100%;
   }
 
-  .detclosemodalbtn{
+  .detclosemodalbtn {
     color: white;
     font-size: 30px;
     padding-left: 16px;
@@ -1378,7 +1382,7 @@ body {
 
   /* 2. SELVE BOKSEN (Må IKKE fylde 100%) */
   .detmodalcontent {
-    background-color: #F9FEFF;
+    background-color: #f9feff;
     margin: 5vh auto;
     width: 500px !important;
     height: auto;
@@ -1391,7 +1395,9 @@ body {
   }
 
   /* 3. SKJUL NAVIGATION */
-  nav, .navigation-wrapper, .navbar {
+  nav,
+  .navigation-wrapper,
+  .navbar {
     display: none !important;
   }
 
@@ -1405,7 +1411,7 @@ body {
   .reportbtn {
     background: $primary !important;
     border: 1px solid #010439;
-    color: #F9FEFF !important;
+    color: #f9feff !important;
     padding: 8px 30px;
     border-radius: 25px;
     font-weight: bold;
@@ -1421,14 +1427,13 @@ body {
     width: 100%;
     height: 65px;
 
-    background: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 1) 100%
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
     );
 
     pointer-events: none;
     z-index: 10;
   }
-
-
 }
