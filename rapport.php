@@ -157,6 +157,8 @@ require "settings/init.php";
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 
