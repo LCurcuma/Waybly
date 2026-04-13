@@ -202,7 +202,7 @@ require "settings/init.php";
 </div>
 <div class="links">
 <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-<a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
+<a href="rapport.php" class="link_rapport" >+</a>
 </div>
 </div>
     `);
