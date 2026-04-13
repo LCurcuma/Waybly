@@ -215,6 +215,11 @@ require "settings/init.php";
                                     class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
                                     <div class="bi bi-door-open-fill fs-5"></div>Dør
                                 </div>
+
+                                <div
+                                        class="btn btn-outline-secondary text-dark border bg-white rounded-pill d-flex align-items-center gap-2 flex-shrink-0 h-cursor-pointer">
+                                    <div class="bi bi bi-box-fill fs-5"></div>Plads
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -334,8 +339,6 @@ require "settings/init.php";
                             stjerner += '<i class="bi bi-star text-info"></i>';
                         }
                     }
-
-
 
                     // Markeringer
                     let tags = '';
@@ -676,7 +679,6 @@ require "settings/init.php";
     </script>
     <!----------- CARDS JS SCRIPT ---------->
     <!--fra index.html-->
-
 
 
     <!------------ AOS LIBRARY ------------>
