@@ -153,9 +153,10 @@ require "settings/init.php";
         </div>
         <!---------------- CARDS --------------->
 
-
         <!--------------- NAVBAR --------------->
-        <?php include 'components/navigation.php'; ?>
+        <div class="d-block d-lg-none position-fixed bottom-0 start-0 w-100 bg-primary px-5 mx-0 my-0 py-0">
+            <?php include 'components/navigation.php'; ?>
+        </div>
         <!--------------- NAVBAR --------------->
     </div>
 
@@ -230,13 +231,13 @@ require "settings/init.php";
                     <div class="px-3">
                         <div class="mb-4">
                             <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
-                            <div class="d-flex flex-column gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
+                            <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                                 id="places-container_desktop"></div>
                         </div>
 
                         <div class="mb-5 pb-5">
                             <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
-                            <div class="d-flex flex-column gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
+                            <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                                 id="reviews-container_desktop"></div>
                         </div>
                     </div>
@@ -340,6 +341,24 @@ require "settings/init.php";
                         }
                     }
 
+                    // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+                    place.markings.sort(function (a, b) {
+
+                        // Vi definerer en rækkefølge/værdi for hver farve
+                        const colorOrder = {
+                            "success": 1,
+                            "warning": 2,
+                            "danger": 3
+                        };
+
+                        // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
+                        const weightA = colorOrder[a.status] || 4;
+                        const weightB = colorOrder[b.status] || 4;
+
+                        // Sorter laveste tal først
+                        return weightA - weightB;
+                    });
+
                     // Markeringer
                     let tags = '';
 
@@ -400,10 +419,13 @@ require "settings/init.php";
 </div>
 </div>
 </div>
-<div class="links">
-<a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-<a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
-</div>
+${place.link !== "" ? `
+                    <div class="links">
+                    <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
+                    <a href="rapport.php" class="link_rapport" onclick="openDetailsModal(event)">+</a>
+                    </div>
+` : ""}
+
 </div>
     `);
                 });
@@ -585,7 +607,18 @@ require "settings/init.php";
 
                 // Vis kort begge steder
                 tegnKort_desktop(data, 'places-container_desktop');
-                tegnKort_desktop(data, 'reviews-container_desktop');
+
+                // Lav en kopi af dataen, så vi ikke ødelægger den originale rækkefølge
+                const sorteretData_desktop = [...data];
+
+                // 3. Sorter kopien efter rating (højeste tal først)
+                sorteretData_desktop.sort(function (a, b) {
+                    return parseFloat(b.rating) - parseFloat(a.rating);
+                });
+
+                // 4. Vis de sorterede kort i "Seneste anmeldelser"
+                tegnKort_desktop(sorteretData_desktop, 'reviews-container_desktop');
+
 
             } catch (error) {
                 console.error("Fejl:", error);
@@ -621,6 +654,24 @@ require "settings/init.php";
                     }
                 }
 
+                // Sorter markings: grøn (success) -> gul (warning) -> rød (danger)
+                sted.markings.sort(function (a, b) {
+
+                    // Vi definerer en rækkefølge/værdi for hver farve
+                    const colorOrder = {
+                        "success": 1,
+                        "warning": 2,
+                        "danger": 3
+                    };
+
+                    // Hent værdien for a og b (sæt til 4, hvis statussen er ukendt)
+                    const weightA = colorOrder[a.status] || 4;
+                    const weightB = colorOrder[b.status] || 4;
+
+                    // Sorter laveste tal først
+                    return weightA - weightB;
+                });
+
                 // tags
                 let tags = '';
 
@@ -643,7 +694,7 @@ require "settings/init.php";
 
                 // laver cards
                 const kort_desktop = `
-            <div class="h-place-card flex-shrink-0 mb-3" style="width: 100%; ${sted.link ? 'cursor:pointer;' : ''}"
+            <div class="h-place-card flex-shrink-0 mb-3" style="width: 260px; ${sted.link ? 'cursor:pointer;' : ''}"
                 onclick="${sted.link ? `window.location.href='${sted.link}'` : ''}"">
 
                 <img src="${sted.photo_links[0]}" class="h-card-img">
