@@ -593,6 +593,7 @@ require "settings/init.php";
         }
 
         // Lav kortene
+        // Lav kortene (Desktop)
         function tegnKort_desktop(liste, containerId) {
 
             const container = document.getElementById(containerId);
@@ -609,13 +610,10 @@ require "settings/init.php";
                 const rating = parseFloat(sted.rating);
 
                 for (let i = 1; i <= 5; i++) {
-
                     if (i <= Math.floor(rating)) {
                         stjerner += '<i class="bi bi-star-fill text-info"></i>';
-
                     } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
                         stjerner += '<i class="bi bi-star-half text-info"></i>';
-
                     } else {
                         stjerner += '<i class="bi bi-star text-info"></i>';
                     }
@@ -625,7 +623,6 @@ require "settings/init.php";
                 let tags = '';
 
                 sted.markings.forEach(function (m) {
-
                     let tekstFarve;
 
                     if (m.status === "warning") {
@@ -635,42 +632,58 @@ require "settings/init.php";
                     }
 
                     tags += `
-                <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
-                    ${m.navn}
-                </div>
-            `;
+            <div class="badge bg-${m.status} ${tekstFarve} me-1" style="border-radius: 6px;">
+                ${m.navn}
+            </div>
+        `;
                 });
+
+
+                // Gør så "netto" cardet i desktop åbner leylas popup istedet for details.php
+                let onClickAction = "";
+                let cursorStyle = "";
+
+                if (sted.name.toLowerCase() === "netto") {
+                    // Åbn modal, hvis stedet er Netto
+                    onClickAction = "document.getElementById('detailsModal').style.display='block'";
+                    cursorStyle = "cursor:pointer;";
+                } else if (sted.link) {
+                    // Gå til linket, hvis det er alle andre steder
+                    onClickAction = `window.location.href='${sted.link}'`;
+                    cursorStyle = "cursor:pointer;";
+                }
+
 
                 // laver cards
                 const kort_desktop = `
-            <div class="h-place-card flex-shrink-0 mb-3" style="width: 100%; ${sted.link ? 'cursor:pointer;' : ''}"
-                onclick="${sted.link ? `window.location.href='${sted.link}'` : ''}"">
+        <div class="h-place-card flex-shrink-0 mb-3" style="width: 100%; ${cursorStyle}"
+            onclick="${onClickAction}">
 
-                <img src="${sted.photo_links[0]}" class="h-card-img">
+            <img src="${sted.photo_links[0]}" class="h-card-img">
 
-                <div class="p-3">
+            <div class="p-3">
 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="fw-bold text-nowrap overflow-hidden" style="text-overflow: ellipsis; max-width: 140px;">
-                            ${sted.name}
-                        </div>
-
-                        <div class="small d-flex align-items-center gap-1">
-                            <span>${stjerner}</span>
-                            <span class="fw-bold">${sted.rating}</span>
-                        </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="fw-bold text-nowrap overflow-hidden" style="text-overflow: ellipsis; max-width: 140px;">
+                        ${sted.name}
                     </div>
 
-                    <div class="h-description-text mt-1 mb-2">
-                        ${sted.description}
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-1">
-                        ${tags}
+                    <div class="small d-flex align-items-center gap-1">
+                        <span>${stjerner}</span>
+                        <span class="fw-bold">${sted.rating}</span>
                     </div>
                 </div>
+
+                <div class="h-description-text mt-1 mb-2">
+                    ${sted.description}
+                </div>
+
+                <div class="d-flex flex-wrap gap-1">
+                    ${tags}
+                </div>
             </div>
-        `;
+        </div>
+    `;
 
                 // Tilføj til siden
                 container.innerHTML += kort_desktop;
