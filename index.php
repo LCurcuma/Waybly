@@ -311,7 +311,7 @@ require "settings/init.php";
             });
         }
     </script>
-    <!----------- CARDS JS SCRIPT MOBIL ----------->
+<!----------- CARDS JS SCRIPT MOBIL ----------->
 
 
 </div>
@@ -351,6 +351,8 @@ require "settings/init.php";
                 <div class="px-3 pt-4">
                     <div class="mb-4">
 
+                        <div data-aos="fade-up">
+
                         <div class="h4 fw-bold mb-3">Populære søgninger</div>
                         <div class="d-flex gap-2 overflow-x-auto h-hide-scrollbar pb-2">
 
@@ -379,6 +381,8 @@ require "settings/init.php";
                                 <div class="bi bi bi-box-fill fs-5"></div>Plads
                             </div>
 
+
+                        </div>
                         </div>
 
                     </div>
@@ -388,16 +392,21 @@ require "settings/init.php";
 
                 <!------------- CARDS DESKTOP ------------>
                 <div class="px-3">
+
+                    <div data-aos="fade-up">
                     <div class="mb-4">
                         <div class="h5 fw-bold mb-3">Steder tæt på dig</div>
                         <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                              id="places-container_desktop"></div>
                     </div>
+                    </div>
 
+                    <div data-aos="fade-up">
                     <div class="mb-5 pb-5">
                         <div class="h5 fw-bold mb-3">Seneste anmeldelser</div>
                         <div class="d-flex gap-3 w-100 overflow-x-auto h-hide-scrollbar pb-2"
                              id="reviews-container_desktop"></div>
+                    </div>
                     </div>
                 </div>
                 <!------------- CARDS DESKTOP ------------>
@@ -407,6 +416,7 @@ require "settings/init.php";
                 <div class="col-8 position-fixed top-0 end-0">
 
                     <!-- søgefelt -->
+                    <div data-aos="fade-up">
                     <div class="input-group mb-3 mt-3 h-search-bar">
                         <div class="input-group-text bg-white border-0">
                             <div class="bi bi-search text-muted"></div>
@@ -419,9 +429,13 @@ require "settings/init.php";
                         </div>
 
                     </div>
+                    </div>
 
-                    <!-- maps -->
-                    <div id="map"></div>
+                    <!-- Maps -->
+                    <div data-aos="fade-up">
+                        <div id="map"></div>
+                    </div>
+
                 </div>
                 <!-------------- MAPS DESKTOP ------------>
 
