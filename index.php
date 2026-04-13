@@ -731,7 +731,7 @@ require "settings/init.php";
                             </div>
 
                             <div class="dropdown-menu p-3 statuspopup">
-                                Intet behov for rampe, da der er ingen forhindringer.
+                                Intet behov for rampe, da der er ingen forhindringer!
                             </div>
                         </div>
 
@@ -742,13 +742,13 @@ require "settings/init.php";
                             </div>
 
                             <div class="dropdown-menu  p-3 statuspopup">
-                                Super bred dør, med adgang til kørestol osv.
+                                Super bred dør, med adgang til kørestol osv.!
                             </div>
                         </div>
 
 
                         <div class="dropdown">
-                            <div class="statusbox status-error" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                            <div class="statusbox status-warning" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
                                 <i class="statusicon fa-solid fa-wheelchair ps-2"></i>
                                 <span class="statusoverskrift px-1 pe-2">Toilet</span>
                             </div>
@@ -758,15 +758,25 @@ require "settings/init.php";
                             </div>
                         </div>
 
+                        <div class="dropdown">
+                            <div class="statusbox status-ok" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                                <i class="statusicon bi bi-box-seam ps-2"></i>
+                                <span class="statusoverskrift px-1 pe-2">Plads</span>
+                            </div>
+
+                            <div class="dropdown-menu p-3 statuspopup">
+                                Der er meget god plads!
+                            </div>
+                        </div>
 
                         <div class="dropdown">
-                            <div class="statusbox status-warning" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                            <div class="statusbox status-ok" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
                                 <i class="statusicon fa-solid fa-square-parking ps-2"></i>
                                 <span class="statusoverskrift px-1 pe-2">Parkering</span>
                             </div>
 
                             <div class="dropdown-menu  p-3 statuspopup">
-                                Ikke så mange parkeringspladser.
+                                Mange parkeringspladser!
                             </div>
                         </div>
                     </div>
