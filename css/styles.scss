@@ -777,7 +777,6 @@ body {
   @include media-breakpoint-up(mg) {
     font-size: 36px;
   }
-
 }
 //--------------- HEADER ---------------//
 
@@ -913,7 +912,6 @@ body {
   padding-top: 15px;
   margin-left: 22px;
   margin-right: 22px;
-
 }
 
 .statusoverskrift {
@@ -1340,13 +1338,12 @@ body {
 
 //--------------- KOMMENTARSEKTION ---------------//
 
-
 //--------------- STYLING FOR DETAILS MODAL ---------------//
 
 .desktopfooter {
   display: none;
 }
-.detmodal{
+.detmodal {
   display: none;
 }
 
@@ -1359,15 +1356,9 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.7
-    ) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
     overflow-x: hidden;
   }
-
 
   .details {
     width: 100%;
