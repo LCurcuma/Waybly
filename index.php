@@ -402,29 +402,35 @@ require "settings/init.php";
                 </div>
                 <!------------- CARDS DESKTOP ------------>
 
-                </div>
 
-                <!--index.html-->
-
-                <!--map.html-->
+                <!-------------- MAPS DESKTOP ------------>
                 <div class="col-8 position-fixed top-0 end-0">
+
                     <!-- søgefelt -->
                     <div class="input-group mb-3 mt-3 h-search-bar">
                         <div class="input-group-text bg-white border-0">
                             <div class="bi bi-search text-muted"></div>
                         </div>
+
                         <input type="text" class="form-control border-0 shadow-none" placeholder="Søg på steder!">
+
                         <div class="input-group-text bg-white border-0">
                             <div class="bi bi-mic text-muted"></div>
                         </div>
+
                     </div>
 
+                    <!-- maps -->
                     <div id="map"></div>
                 </div>
-                <!--map.html-->
+                <!-------------- MAPS DESKTOP ------------>
+
+
             </div>
         </div>
     </div>
+</div>
+<!---- TABLET-/DESKTOPVERSION AF INDEX.PHP ---->
 
 
     <!--fra map.html-->
