@@ -440,7 +440,7 @@ require "settings/init.php";
                         </div>
 
                         <!-- maps -->
-                        <div id="map"></div>
+                        <div id="map" class="ms-2"></div>
                     </div>
                     <!-------------- MAPS DESKTOP ------------>
 
@@ -1031,7 +1031,7 @@ require "settings/init.php";
                     <div class="location-card">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="location-info">
-                                <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
+                                <h2 class="fw-bold custom-h2">Netto</h2>
                                 <div class="rating fw-bold">
                                     <i class="bi bi-star-fill" style="color: #00B4D7"></i>
                                     <i class="bi bi-star-fill" style="color: #00B4D7"></i>
