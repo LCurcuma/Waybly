@@ -1011,7 +1011,7 @@ require "settings/init.php";
         </div>
     </div>
 
-    ----------Rapport popup--------
+    <!----------Rapport popup-------->
 
 <div id="reportModal" class="report-container">
     <div class="report-modal-content">
@@ -1230,7 +1230,7 @@ require "settings/init.php";
     });
 </script>
 
-    ----------Rapport popup--------
+    <!----------Rapport popup-------->
 
             <script>
                 function openDetailsModal(event) {
