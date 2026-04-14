@@ -1231,7 +1231,7 @@ require "settings/init.php";
     });
 </script>
 
-    ----------Rapport popup--------
+    <!----------Rapport popup-------->
 
             <script>
                 function openDetailsModal(event) {
