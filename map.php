@@ -50,7 +50,7 @@ require "settings/init.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         //den laver kort, som viser kort på lokationen, som er 54, 11 med zoom 16
-        var map = L.map('map').setView([54.7646137, 11.8709918], 16);
+        var map = L.map('map').setView([54.7646137, 11.8709918], 15);
 
         //den tage kortet fra nettet. Uden det vises kortet ikke
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
