@@ -1017,6 +1017,7 @@ require "settings/init.php";
     <div class="report-modal-content">
         <div class="details">
 
+            <!-- Header -->
             <div class="r-header">
                 <a href="#" class="back-btn d-lg-none" onclick="closeReportModal()">
                     <i class="bi bi-arrow-left custom-icon"></i>
@@ -1030,6 +1031,7 @@ require "settings/init.php";
             <div class="app-wrapper">
                 <div class="left-column">
 
+                    <!-- Card -->
                     <div class="location-card">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="location-info">
@@ -1047,6 +1049,7 @@ require "settings/init.php";
                         </div>
                     </div>
 
+                    <!-- Checkliste -->
                     <div class="section">
                         <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"> Checkliste</h3>
 
