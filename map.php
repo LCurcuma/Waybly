@@ -203,7 +203,6 @@ require "settings/init.php";
 ${place.link !== "" ? `
                     <div class="links">
                     <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">Se detaljer</a>
-                    <a href="rapport.php" class="link_rapport" onclick="openRapportModal(event)">+</a>
                     </div>
 ` : ""}
 </div>
@@ -220,7 +219,8 @@ ${place.link !== "" ? `
         <div class="detmodalcontent">
 
             <div class="details">
-                <div class="headerimg" style="background-image: url('https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp');">
+                <div class="headerimg"
+                    style="background-image: url('https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp');">
                     <span class="detclosemodalbtn" onclick="closeDetailsModal()">&times;</span>
 
                 </div>
@@ -246,12 +246,14 @@ ${place.link !== "" ? `
 
                     <div class="statustilgængelighedbokse">
                         <div class="dropdown">
-                            <div class="statusbox status-ok px-2" data-bs-toggle="dropdown" aria-expanded="false" id="rampe-trigger" data-bs-boundary="viewport" data-bs-auto-close="outside">
-                                <svg class="statusiconsvg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26">
+                            <div class="statusbox status-ok px-2" data-bs-toggle="dropdown" aria-expanded="false"
+                                id="rampe-trigger" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                                <svg class="statusiconsvg" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 26 26">
                                     <g id="disability-ramp-up">
                                         <path id="Union" fill="#f9feff"
-                                              d="M20.4961 15.877c0.6666 -0.3888 1.5039 0.0925 1.5039 0.8642V21c0 0.5523 -0.4477 1 -1 1h-9.1504c-0.5104 0 -0.6928 -0.6745 -0.2519 -0.9316zM5.00684 13.7051c0.25879 -0.4876 0.86376 -0.6736 1.35156 -0.4151 0.48781 0.2588 0.67368 0.8647 0.41504 1.3526 -0.18406 0.3474 -0.28902 0.7442 -0.28906 1.1679 0.00026 1.3805 1.11945 2.5 2.5 2.5 1.33472 0 2.42552 -1.0467 2.49612 -2.3632 0.0294 -0.5514 0.5004 -0.9746 1.0517 -0.9453 0.5515 0.0294 0.9747 0.5003 0.9453 1.0517 -0.1269 2.3725 -2.0895 4.2568 -4.49312 4.2568 -2.48512 0 -4.49974 -2.0149 -4.5 -4.5 0.00004 -0.7583 0.18904 -1.4763 0.52246 -2.1054m0.97461 -6.60256c1.05573 -0.6095 2.31379 0.30618 3.41699 0.47168 1.21886 0.18279 2.35076 0.11497 3.00196 -0.37305 0.4418 -0.33123 1.0681 -0.24158 1.3994 0.2002 0.3307 0.44178 0.2414 1.06823 -0.2002 1.39941 -1.2342 0.92523 -2.9034 0.94402 -4.15917 0.79395l1.54787 2.67967 2.1455 -1.2373c0.9565 -0.5522 2.1801 -0.2249 2.7324 0.7315l1.8662 3.2324c0.2754 0.4781 0.1118 1.0902 -0.3662 1.3662 -0.478 0.2757 -1.0899 0.1114 -1.3662 -0.3662l-1.8662 -3.2324L10.5 14.8672c-0.82599 0.4763 -1.95041 0.1836 -2.42773 -0.6426L5.34082 9.49316c-0.4831 -0.83688 -0.19609 -1.9073 0.64063 -2.39062M4.75 3c0.9665 0 1.75 0.7835 1.75 1.75S5.7165 6.5 4.75 6.5 3 5.7165 3 4.75 3.7835 3 4.75 3"
-                                              stroke-width="1"></path>
+                                            d="M20.4961 15.877c0.6666 -0.3888 1.5039 0.0925 1.5039 0.8642V21c0 0.5523 -0.4477 1 -1 1h-9.1504c-0.5104 0 -0.6928 -0.6745 -0.2519 -0.9316zM5.00684 13.7051c0.25879 -0.4876 0.86376 -0.6736 1.35156 -0.4151 0.48781 0.2588 0.67368 0.8647 0.41504 1.3526 -0.18406 0.3474 -0.28902 0.7442 -0.28906 1.1679 0.00026 1.3805 1.11945 2.5 2.5 2.5 1.33472 0 2.42552 -1.0467 2.49612 -2.3632 0.0294 -0.5514 0.5004 -0.9746 1.0517 -0.9453 0.5515 0.0294 0.9747 0.5003 0.9453 1.0517 -0.1269 2.3725 -2.0895 4.2568 -4.49312 4.2568 -2.48512 0 -4.49974 -2.0149 -4.5 -4.5 0.00004 -0.7583 0.18904 -1.4763 0.52246 -2.1054m0.97461 -6.60256c1.05573 -0.6095 2.31379 0.30618 3.41699 0.47168 1.21886 0.18279 2.35076 0.11497 3.00196 -0.37305 0.4418 -0.33123 1.0681 -0.24158 1.3994 0.2002 0.3307 0.44178 0.2414 1.06823 -0.2002 1.39941 -1.2342 0.92523 -2.9034 0.94402 -4.15917 0.79395l1.54787 2.67967 2.1455 -1.2373c0.9565 -0.5522 2.1801 -0.2249 2.7324 0.7315l1.8662 3.2324c0.2754 0.4781 0.1118 1.0902 -0.3662 1.3662 -0.478 0.2757 -1.0899 0.1114 -1.3662 -0.3662l-1.8662 -3.2324L10.5 14.8672c-0.82599 0.4763 -1.95041 0.1836 -2.42773 -0.6426L5.34082 9.49316c-0.4831 -0.83688 -0.19609 -1.9073 0.64063 -2.39062M4.75 3c0.9665 0 1.75 0.7835 1.75 1.75S5.7165 6.5 4.75 6.5 3 5.7165 3 4.75 3.7835 3 4.75 3"
+                                            stroke-width="1"></path>
                                     </g>
                                 </svg>
                                 <span class="statusoverskrift px-1">Rampe</span>
@@ -263,7 +265,8 @@ ${place.link !== "" ? `
                         </div>
 
                         <div class="dropdown">
-                            <div class="statusbox status-ok has-tooltip" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                            <div class="statusbox status-ok has-tooltip" data-bs-toggle="dropdown"
+                                data-bs-boundary="viewport" data-bs-auto-close="outside">
                                 <i class="statusicon bi bi-door-closed-fill ps-2"></i>
                                 <span class="statusoverskrift px-1 pe-2">Dør</span>
                             </div>
@@ -275,7 +278,8 @@ ${place.link !== "" ? `
 
 
                         <div class="dropdown">
-                            <div class="statusbox status-error" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                            <div class="statusbox status-error" data-bs-toggle="dropdown" data-bs-boundary="viewport"
+                                data-bs-auto-close="outside">
                                 <i class="statusicon fa-solid fa-wheelchair ps-2"></i>
                                 <span class="statusoverskrift px-1 pe-2">Toilet</span>
                             </div>
@@ -287,7 +291,8 @@ ${place.link !== "" ? `
 
 
                         <div class="dropdown">
-                            <div class="statusbox status-warning" data-bs-toggle="dropdown" data-bs-boundary="viewport" data-bs-auto-close="outside">
+                            <div class="statusbox status-warning" data-bs-toggle="dropdown" data-bs-boundary="viewport"
+                                data-bs-auto-close="outside">
                                 <i class="statusicon fa-solid fa-square-parking ps-2"></i>
                                 <span class="statusoverskrift px-1 pe-2">Parkering</span>
                             </div>
@@ -397,7 +402,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRapportModal()">
+                    <button class="reportbtn" onclick="handleReportClick(event)">
                         Rapporter
                     </button>
                 </div>
@@ -429,6 +434,219 @@ ${place.link !== "" ? `
         }
 
     </script>
+
+    <div id="reportModal" class="report-container">
+        <div class="report-modal-content">
+            <div class="details">
+
+                <div class="r-header">
+                    <a href="#" class="back-btn d-lg-none" onclick="closeReportModal()">
+                        <i class="bi bi-arrow-left custom-icon"></i>
+                    </a>
+
+                    <span class="detclosemodalbtn d-none d-lg-block" onclick="closeReportModal()">&times;</span>
+
+                    <h1 class="custom-heading">Rapporter</h1>
+                </div>
+
+                <div class="app-wrapper">
+                    <div class="left-column">
+
+                        <div class="location-card">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="location-info">
+                                    <h2 class="fw-bold custom-h2">Netto Fejøgade</h2>
+                                    <div class="rating fw-bold">
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-fill" style="color: #00B4D7"></i>
+                                        <i class="bi bi-star-half" style="color: #00B4D7"></i>
+                                        <span class="score">4.5</span>
+                                    </div>
+                                </div>
+                                <img src="https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp" class="location-img" alt="netto">
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"> Checklist</h3>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/rampe.png" style="width: 30px" alt="rampe"> Rampe</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/toilet.png" style="width: 30px" alt="toilet"> Toilet</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/dør.png" style="width: 30px" alt="dør"> Dør</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/parkering.png" style="width: 30px" alt="parkering"> Parkering</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+
+                            <div class="check-item">
+                                <span><img src="img/checklist/plads.png" style="width: 30px" alt="plads"> Plads</span>
+                                <div class="icons">
+                                    <i class="bi bi-emoji-smile happy"></i>
+                                    <i class="bi bi-emoji-neutral neutral"></i>
+                                    <i class="bi bi-emoji-frown sad"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bemærkninger -->
+                        <div class="section">
+                            <h3><img src="img/checklist/bemærkninger/note.png" style="width: 20px" alt="note"><strong>
+                                    Bemærkninger</strong><span> (valgfri)</span></h3>
+                            <textarea id="noteInput" class="custom-textarea"></textarea>
+                        </div>
+
+                        <!-- Upload -->
+                        <div class="section">
+                            <h3 class="fw-bold custom-h3"><img src="img/checklist/uploade.png" style="width: 20px" alt="upload">
+                                <strong>Upload billede</strong> <span>(valgfri)</span></h3>
+                            <div class="upload-buttons">
+                                <button class="upload-btn">
+                                    <i class="bi bi-camera"></i>
+                                    Tag photo
+                                </button>
+                                <button class="upload-btn">
+                                    <i class="bi bi-upload"></i>
+                                    Upload photo
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <button id="submitBtn" class="submit-btn" data-bs-toggle="modal" data-bs-target="#successModal">Indsend
+                            rapport</button>
+
+                        <div class="modal fade" id="successModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content success-modal text-center">
+
+                                    <div class="success-icon">
+                                        ✓
+                                    </div>
+
+                                    <h2 class="success-title">Tak!</h2>
+                                    <p class="success-text">Din rapport er nu indsendt og modtaget af vores team.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // pakker alt ind i en EventListener, der venter på at HTML'en er klar
+                    document.addEventListener('DOMContentLoaded', function() {
+
+                        // --- 1. RAPPORT LOGIK (Popup vs. Side) ---
+                        window.handleReportClick = function(event) {
+                            if (event) event.preventDefault();
+
+                            const reportModal = document.getElementById('reportModal');
+                            const detailsModal = document.getElementById('detailsModal');
+
+                            if (window.innerWidth < 850) {
+                                // MOBIL: Gå til separat side
+                                window.location.href = 'rapport.php';
+                            } else {
+                                // DESKTOP: Åbn popup
+                                if (reportModal) {
+                                    reportModal.classList.add('active');
+                                    reportModal.style.display = 'flex'; // Sikrer visning
+                                    document.body.style.overflow = 'hidden';
+
+                                    if (detailsModal) {
+                                        detailsModal.style.display = 'none';
+                                    }
+                                }
+                            }
+                        };
+
+                        window.closeReportModal = function() {
+                            const reportModal = document.getElementById('reportModal');
+                            if (window.innerWidth >= 850) {
+                                if (reportModal) {
+                                    reportModal.classList.remove('active');
+                                    reportModal.style.display = 'none';
+                                }
+                                document.body.style.overflow = 'auto';
+                            } else {
+                                window.history.back();
+                            }
+                        };
+
+                        // ---  EMOJI / IKON VALG ---
+                        // lytter på dokumentet, så det virker selvom indholdet loades senere
+                        document.addEventListener('click', function(e) {
+                            if (e.target.matches('.icons i')) {
+                                const icon = e.target;
+                                const parent = icon.parentElement;
+                                parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
+                                icon.classList.add('active');
+                            }
+                        });
+
+                        // --- SUCCESS MODAL AUTO-LUK ---
+                        const successModalEl = document.getElementById('successModal');
+                        if (successModalEl) {
+                            successModalEl.addEventListener('shown.bs.modal', function () {
+                                setTimeout(() => {
+                                    const modalInstance = bootstrap.Modal.getInstance(successModalEl);
+                                    if (modalInstance) modalInstance.hide();
+
+                                    // Valgfrit: Luk også selve rapport-popup'en når success er færdig
+                                    closeReportModal();
+                                }, 3000);
+                            });
+                        }
+
+                        document.querySelectorAll('.upload-btn').forEach(btn => {
+                            btn.addEventListener('click', () => {
+                                alert('funktion kommer snart');
+                            });
+                        });
+
+                        const submitBtn = document.getElementById('submitBtn');
+                        if (submitBtn) {
+                            submitBtn.addEventListener('click', function () {
+                                const noteInput = document.getElementById('noteInput');
+                                if (noteInput) noteInput.value = '';
+
+                                document.querySelectorAll('.icons i').forEach(icon => {
+                                    icon.classList.remove('active');
+                                });
+                            });
+                        }
+
+                    });
+                </script>
 
 
 </body>

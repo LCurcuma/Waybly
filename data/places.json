@@ -93,7 +93,7 @@
       { "navn": "Dør", "status": "success" },
       { "navn": "Toilet", "status": "warning" },
       { "navn": "Plads", "status": "success" },
-      { "navn": "Parkering", "status": "warning" }
+      { "navn": "Parkering", "status": "success" }
     ],
     "markerColor": "marker-success",
     "photo_links": [

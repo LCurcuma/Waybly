@@ -619,7 +619,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   font-size: 12px;
   opacity: 0.7;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -686,15 +685,38 @@ body {
   }
 }
 
+#successModal{
+  background-color: rgba(0, 0, 0, 0.5)!important;
+  transition: 0.3s ease-in-out;
+
+.modal-dialog{
+  z-index: 10060;
+  display: flex;
+  align-items: center;
+
+
+  @include media-breakpoint-up(mg){
+    max-width: 350px !important;
+    width: 350px !important;
+    margin-left: auto;
+    margin-right: auto;
+    }
+  }
+}
+
 .success-modal {
   border-radius: 20px;
   padding: 30px 20px;
   border: none;
+  background-color: $white;
+  width: 100%;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3)!important;
 
   @include media-breakpoint-up(mg) {
     padding: 40px 30px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4)!important;
+    }
   }
-}
 
 // Grøn cirkel
 .success-icon {
@@ -702,14 +724,11 @@ body {
   height: 70px;
   background: #2ecc71;
   color: white;
-
   border-radius: 50%;
   font-size: 30px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: 0 auto 15px auto;
 
   @include media-breakpoint-up(mg) {
@@ -744,6 +763,105 @@ body {
 
 //---------------Rapport--------------//
 
+//---------STYLING RAPPORT MODAL------//
+
+.report-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #f4f6f8;
+
+    &.active{
+      display: block;
+      align-items: center;
+      justify-content: center;
+
+      @include media-breakpoint-up(mg){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+}
+
+.report-modal-content {
+  width: 100%;
+  min-height: 100vh;
+
+  @include media-breakpoint-up(mg){
+    margin: 0;
+    width: 500px !important;
+    min-height: auto;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Desktop Popup Layout */
+@include media-breakpoint-up(lg) {
+  .report-container {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    overflow-y: auto;
+  }
+
+  .report-modal-content {
+    background-color: #f9feff;
+    margin: 5vh auto;
+    width: 500px !important;
+    min-height: auto;
+    max-height: 90vh;
+    border-radius: 15px;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  }
+
+  #reportModal .app-wrapper {
+    min-height: auto !important;
+    background: transparent;
+    padding: 0 20px 20px 20px;
+
+  }
+
+  #reportModal .location-card{
+    background: $white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
+    margin-top: -30px;
+    margin-bottom: 20px;
+
+  }
+
+  #reportModal .r-header {
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    padding-bottom: 70px;
+  }
+
+  #reportModal .submit-btn {
+    margin: 20px auto 0 auto !important;
+    display: block;
+    width: 80%;
+  }
+}
+
+//---------STYLING RAPPORT MODAL------//
+
 //--------------- DETAILS SIDE - HEADER ---------------//
 .headerimg {
   min-height: 250px;
@@ -777,7 +895,6 @@ body {
   @include media-breakpoint-up(mg) {
     font-size: 36px;
   }
-
 }
 //--------------- HEADER ---------------//
 
@@ -913,7 +1030,6 @@ body {
   padding-top: 15px;
   margin-left: 22px;
   margin-right: 22px;
-
 }
 
 .statusoverskrift {
@@ -1340,13 +1456,12 @@ body {
 
 //--------------- KOMMENTARSEKTION ---------------//
 
-
 //--------------- STYLING FOR DETAILS MODAL ---------------//
 
 .desktopfooter {
   display: none;
 }
-.detmodal{
+.detmodal {
   display: none;
 }
 
@@ -1359,15 +1474,9 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.7
-    ) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
     overflow-x: hidden;
   }
-
 
   .details {
     width: 100%;

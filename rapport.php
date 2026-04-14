@@ -127,7 +127,8 @@ require "settings/init.php";
             <!-- Upload -->
             <div class="section">
                 <h3 class="fw-bold custom-h3"><img src="img/checklist/uploade.png" style="width: 20px" alt="upload">
-                    <strong>Upload billede</strong> <span>(valgfri)</span></h3>
+                    <strong>Upload billede</strong> <span>(valgfri)</span>
+                </h3>
                 <div class="upload-buttons">
                     <button class="upload-btn">
                         <i class="bi bi-camera"></i>
@@ -157,50 +158,52 @@ require "settings/init.php";
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 
 
 
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-            <script>
-                document.querySelectorAll('.icons i').forEach(icon => {
-                    icon.addEventListener('click', function () {
-                        let parent = this.parentElement;
+    <script>
+        document.querySelectorAll('.icons i').forEach(icon => {
+            icon.addEventListener('click', function () {
+                let parent = this.parentElement;
 
-                        parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
-                        this.classList.add('active');
-                    });
-                });
+                parent.querySelectorAll('i').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
 
-                var modal = document.getElementById('successModal');
-                modal.addEventListener('shown.bs.modal', function () {
-                    setTimeout(() => {
-                        bootstrap.Modal.getInstance(modal).hide();
-                    }, 3000);
-                });
+        var modal = document.getElementById('successModal');
+        modal.addEventListener('shown.bs.modal', function () {
+            setTimeout(() => {
+                bootstrap.Modal.getInstance(modal).hide();
+            }, 3000);
+        });
 
-                document.querySelectorAll('.upload-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        alert('funktion kommer snart');
-                    });
-                });
+        document.querySelectorAll('.upload-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('funktion kommer snart');
+            });
+        });
 
-                document.getElementById('submitBtn').addEventListener('click', function () {
+        document.getElementById('submitBtn').addEventListener('click', function () {
 
-                    // Ryd textarea
-                    document.getElementById('noteInput').value = '';
+            // Ryd textarea
+            document.getElementById('noteInput').value = '';
 
-                    // Fjern valgte emojis (active class)
-                    document.querySelectorAll('.icons i').forEach(icon => {
-                        icon.classList.remove('active');
-                    });
+            // Fjern valgte emojis (active class)
+            document.querySelectorAll('.icons i').forEach(icon => {
+                icon.classList.remove('active');
+            });
 
-                });
+        });
 
-            </script>
+    </script>
 
 </body>
 

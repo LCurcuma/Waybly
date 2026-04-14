@@ -114,10 +114,3 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   align-items: center;
   gap: 10px;
 }
-
-.link_rapport {
-  padding: 5px 10px;
-  background-color: $secondary;
-  color: $white !important;
-  border-radius: 50%;
-}
