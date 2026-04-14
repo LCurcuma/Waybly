@@ -624,7 +624,7 @@ require "settings/init.php";
 
                     ${place.link !== "" ? `
                         <div class="links">
-                            <a href="${place.link}" class="link_detaljer" onclick="openDetailsModal(event)">
+                            <a href="${place.link}" class="link_detaljer_index" onclick="openDetailsModal(event)">
                                 Se detaljer
                             </a>
                         </div>
