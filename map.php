@@ -467,10 +467,12 @@ ${place.link !== "" ? `
 
     </script>
 
+    <!----------Rapport popup-------->
     <div id="reportModal" class="report-container">
         <div class="report-modal-content">
             <div class="details">
 
+                <!-- Header -->
                 <div class="r-header">
                     <a href="#" class="back-btn d-lg-none" onclick="closeReportModal()">
                         <i class="bi bi-arrow-left custom-icon"></i>
@@ -484,6 +486,7 @@ ${place.link !== "" ? `
                 <div class="app-wrapper">
                     <div class="left-column">
 
+                        <!-- Card -->
                         <div class="location-card">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="location-info">
@@ -501,6 +504,7 @@ ${place.link !== "" ? `
                             </div>
                         </div>
 
+                        <!-- Checkliste -->
                         <div class="section">
                             <h3 class="custom-check fw-bold"><img src="img/checklist/check.png" style="width: 20px" alt="check"> Checklist</h3>
 
@@ -593,6 +597,10 @@ ${place.link !== "" ? `
                     </div>
                 </div>
 
+                <!----------Rapport popup-------->
+
+                <!---------- funktioner til popup & rapport side ------->
+
                 <script>
                     // pakker alt ind i en EventListener, der venter på at HTML'en er klar
                     document.addEventListener('DOMContentLoaded', function() {
@@ -633,6 +641,7 @@ ${place.link !== "" ? `
                                 window.history.back();
                             }
                         };
+
 
                         // ---  EMOJI / IKON VALG ---
                         // lytter på dokumentet, så det virker selvom indholdet loades senere
@@ -679,6 +688,8 @@ ${place.link !== "" ? `
 
                     });
                 </script>
+
+                <!---------- funktioner til popup & rapport side ------->
 
 
 </body>
