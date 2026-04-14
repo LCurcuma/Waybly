@@ -1142,6 +1142,9 @@ require "settings/init.php";
                 </div>
             </div>
 
+    <!----------Rapport popup-------->
+
+<!---------- funktioner til popup & rapport side ------->
 <script>
     // pakker alt ind i en EventListener, der venter på at HTML'en er klar
     document.addEventListener('DOMContentLoaded', function() {
@@ -1230,7 +1233,7 @@ require "settings/init.php";
     });
 </script>
 
-    <!----------Rapport popup-------->
+<!---------- funktioner til popup & rapport side ------->
 
             <script>
                 function openDetailsModal(event) {
