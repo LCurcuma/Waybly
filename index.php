@@ -827,9 +827,8 @@ require "settings/init.php";
                         <i class="bi bi-star-half" style="color: #00B4D7"></i>
                         <span class="talbio">4.5</span>
                     </div>
-                    <p class="tekstbio text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore, consectetur adipiscing elit</p>
+                    <p class="tekstbio text-muted">Netto er en populær dagligvarebutik kendt for gode priser, et bredt udvalg og hurtig indkøb. Butikken scorer 4,5 stjerner takket være venligt personale, overskuelig indretning og generelt god tilgængelighed.
+                        Et solidt valg til både hurtige og større indkøb.</p>
                 </div>
                 <!-------- INFO BOKS ------->
 
@@ -951,8 +950,7 @@ require "settings/init.php";
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Virkelig nemt at komme rundt – både indgang, gange og faciliteter er godt indrettet. Der er tydelig skiltning, og det hele føles gennemtænkt ift. tilgængelighed. Kan klart anbefales!
                         </p>
                     </div>
                 </div>
@@ -983,9 +981,7 @@ require "settings/init.php";
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Det meste fungerer fint, men der er enkelte steder, hvor det er lidt besværligt at komme rundt. Indgangen er god, men nogle områder kunne godt være mere handicapvenlige.
                         </p>
                     </div>
                 </div>
@@ -1014,8 +1010,7 @@ require "settings/init.php";
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Meget svært at komme rundt. Der mangler ramper, og pladsen er trang flere steder. Ikke egnet hvis man har brug for god tilgængelighed – det bør virkelig forbedres.
                         </p>
                     </div>
                     <!-------- KOMMENTAR FRA PERSON 3 ------->

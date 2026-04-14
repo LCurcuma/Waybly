@@ -238,7 +238,8 @@ ${place.link !== "" ? `
                         <i class="bi bi-star-half" style="color: #00B4D7"></i>
                         <span class="talbio">4.5</span>
                     </div>
-                    <p class="tekstbio text-muted"> Netto er en populær dagligvarebutik kendt for gode priser, et bredt udvalg og hurtig indkøb. Butikken scorer 4,5 stjerner takket være venligt personale, overskuelig indretning og generelt god tilgængelighed. Et solidt valg til både hurtige og større indkøb.</p>
+                    <p class="tekstbio text-muted"> Netto er en populær dagligvarebutik kendt for gode priser, et bredt udvalg og hurtig indkøb. Butikken scorer 4,5 stjerner takket være venligt personale, overskuelig indretning og generelt god tilgængelighed.
+                        Et solidt valg til både hurtige og større indkøb.</p>
                 </div>
                 <!-------- INFO BOKS ------->
 
