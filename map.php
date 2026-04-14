@@ -215,16 +215,19 @@ ${place.link !== "" ? `
 
     </script>
 
+    <!-------- DETALJER POPUP ------->
     <div id="detailsModal" class="detmodal">
         <div class="detmodalcontent">
 
+            <!-------- HEADER ------->
             <div class="details">
                 <div class="headerimg"
                     style="background-image: url('https://image.folketidende.dk/3274311.webp?imageId=3274311&cropw=100.00&croph=100.00&width=2116&height=1208&format=webp');">
                     <span class="detclosemodalbtn" onclick="closeDetailsModal()">&times;</span>
-
                 </div>
+            <!-------- HEADER ------->
 
+                <!-------- INFO BOKS ------->
                 <div class="infobio">
                     <p class="overskriftbio">Netto</p>
                     <div class="stjernerbio">
@@ -235,15 +238,16 @@ ${place.link !== "" ? `
                         <i class="bi bi-star-half" style="color: #00B4D7"></i>
                         <span class="talbio">4.5</span>
                     </div>
-                    <p class="tekstbio text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore, consectetur adipiscing elit</p>
+                    <p class="tekstbio text-muted"> Netto er en populær dagligvarebutik kendt for gode priser, et bredt udvalg og hurtig indkøb. Butikken scorer 4,5 stjerner takket være venligt personale, overskuelig indretning og generelt god tilgængelighed. Et solidt valg til både hurtige og større indkøb.</p>
                 </div>
+                <!-------- INFO BOKS ------->
 
+                <!-------- STATUSBOKSE OVER TILGÆNGELIGHED ------->
                 <div class="tilgængelighed">
                     <span class="overskrifttilgænge pb-5">Tilgængelighed</span> <i
                         class="fa-solid fa-universal-access tilgængelighedicon" style="color:#00B4D7;"></i>
 
+                    <!-------- STATUSBOKS OVER RAMPE ------->
                     <div class="statustilgængelighedbokse">
                         <div class="dropdown">
                             <div class="statusbox status-ok px-2" data-bs-toggle="dropdown" aria-expanded="false"
@@ -263,7 +267,9 @@ ${place.link !== "" ? `
                                 Intet behov for rampe, da der er ingen forhindringer.
                             </div>
                         </div>
+                        <!-------- STATUSBOKS OVER RAMPE ------->
 
+                        <!-------- STATUSBOKS OVER DØR ------->
                         <div class="dropdown">
                             <div class="statusbox status-ok has-tooltip" data-bs-toggle="dropdown"
                                 data-bs-boundary="viewport" data-bs-auto-close="outside">
@@ -275,8 +281,9 @@ ${place.link !== "" ? `
                                 Super bred dør, med adgang til kørestol osv.
                             </div>
                         </div>
+                        <!-------- STATUSBOKS OVER DØR ------->
 
-
+                        <!-------- STATUSBOKS OVER TOILET ------->
                         <div class="dropdown">
                             <div class="statusbox status-error" data-bs-toggle="dropdown" data-bs-boundary="viewport"
                                 data-bs-auto-close="outside">
@@ -288,8 +295,23 @@ ${place.link !== "" ? `
                                 Intet toilet til kunder af butikken.
                             </div>
                         </div>
+                        <!-------- STATUSBOKS OVER TOILET ------->
 
+                        <!-------- STATUSBOKS OVER PLADS ------->
+                        <div class="dropdown">
+                            <div class="statusbox status-ok" data-bs-toggle="dropdown" data-bs-boundary="viewport"
+                                 data-bs-auto-close="outside">
+                                <i class="statusicon bi bi-box-seam ps-2"></i>
+                                <span class="statusoverskrift px-1 pe-2">Plads</span>
+                            </div>
 
+                            <div class="dropdown-menu p-3 statuspopup">
+                                Der er meget god plads!
+                            </div>
+                        </div>
+                        <!-------- STATUSBOKS OVER PLADS ------->
+
+                        <!-------- STATUSBOKS OVER PARKERING ------->
                         <div class="dropdown">
                             <div class="statusbox status-warning" data-bs-toggle="dropdown" data-bs-boundary="viewport"
                                 data-bs-auto-close="outside">
@@ -301,15 +323,17 @@ ${place.link !== "" ? `
                                 Ikke så mange parkeringspladser.
                             </div>
                         </div>
+                        <!-------- STATUSBOKS OVER PARKERING ------->
                     </div>
                 </div>
+                <!-------- STATUSBOKSE OVER TILGÆNGELIGHED ------->
 
-
+                <!-------- KOMMENTARSPOR ------->
                 <div class="kommentarer">
                     <span class="overskriftkommentar pb-5">Kommentarer</span> <i
                         class="fa-solid fa-comments kommentaricon" style="color:#00B4D7;"></i>
                 </div>
-
+                <!-------- KOMMENTAR FRA PERSON 1 ------->
                 <div class="kommentarboks">
                     <div class="kommentarcard">
                         <div class="userinfo">
@@ -335,13 +359,14 @@ ${place.link !== "" ? `
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Virkelig nemt at komme rundt – både indgang, gange og faciliteter er godt indrettet. Der er tydelig skiltning, og det hele føles gennemtænkt ift. tilgængelighed. Kan klart anbefales!
+                        </p>
                         </p>
                     </div>
                 </div>
+                <!-------- KOMMENTAR FRA PERSON 1 ------->
 
-
+                <!-------- KOMMENTAR FRA PERSON 2 ------->
                 <div class="kommentarboks">
                     <div class="kommentarcard">
                         <div class="userinfo">
@@ -366,13 +391,14 @@ ${place.link !== "" ? `
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Det meste fungerer fint, men der er enkelte steder, hvor det er lidt besværligt at komme rundt. Indgangen er god, men nogle områder kunne godt være mere handicapvenlige.
+                        </p>
                         </p>
                     </div>
                 </div>
+                <!-------- KOMMENTAR FRA PERSON 2 ------->
 
+                <!-------- KOMMENTAR FRA PERSON 3 ------->
                 <div class="kommentarboks mb-2">
                     <div class="kommentarcard">
                         <div class="userinfo">
@@ -395,22 +421,28 @@ ${place.link !== "" ? `
                         </div>
 
                         <p class="kommentartekst">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Meget svært at komme rundt. Der mangler ramper, og pladsen er trang flere steder. Ikke egnet hvis man har brug for god tilgængelighed – det bør virkelig forbedres.
+                        </p>
                         </p>
                     </div>
+                    <!-------- KOMMENTAR FRA PERSON 3 ------->
                 </div>
+                <!-------- KOMMENTARSPOR ------->
 
+                <!-------- INDSEN RAPPORTKNAP ------->
                 <div class="desktopfooter">
                     <button class="reportbtn" onclick="handleReportClick(event)">
                         Rapporter
                     </button>
                 </div>
+                <!-------- INDSEN RAPPORTKNAP ------->
             </div>
 
             <div class="bottom-shadow-hint"></div>
         </div>
     </div>
+    <!-------- DETALJER POPUP ------->
+
 
     <script>
         function openDetailsModal(event) {
