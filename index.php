@@ -964,7 +964,7 @@ ${place.link !== "" ? `
                 </div>
 
                 <div class="desktopfooter">
-                    <button class="reportbtn" onclick="openRepportModal()">
+                    <button class="reportbtn" onclick="openRapportModal(event)">
                         Rapporter
                     </button>
                 </div>
