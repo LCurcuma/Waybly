@@ -1011,7 +1011,7 @@ require "settings/init.php";
         </div>
     </div>
 
-    ----------Rapport popup--------
+    <!----------Rapport popup-------->
 
 <div id="reportModal" class="report-container">
     <div class="report-modal-content">
